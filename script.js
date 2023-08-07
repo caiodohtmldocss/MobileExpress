@@ -4,3 +4,4 @@ function search() {
     // Realizar ação de pesquisa aqui, por exemplo:
     alert("Você pesquisou por: " + searchInput);
 }
+
