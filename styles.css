@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #acc9fc;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    padding: 0 40px;
+}
+
+.logo{
+    position: absolute;
+    margin-left: -80%;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px 0 0 5px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #444;
+    border: none;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+#logo {
+ width: 180px;   
+}
+#searchInput{
+     width: 600px;
+}
