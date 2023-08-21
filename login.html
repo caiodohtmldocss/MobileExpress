@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="principal.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <title>Mobile Express</title>
 </head>
@@ -13,12 +13,22 @@
 <body>
     <header>
         <nav>
+            <div class="navbar">
+                <div class="menu-icon" onclick="toggleMenu()">
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                </div>
+                <div class="menu-links" id="menuLinks">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                  <a href="#">Link 4</a>
+                  <a href="#">Link 5</a>
+                </div>
+              </div>
             <div class="logo">
                 <img id="logo" src="img/logome.png" alt="Logo da Empresa">
-            </div>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Pesquisar...">
-                <button onclick="search()">Pesquisar</button>
             </div>
         </nav>
     </header>
@@ -27,49 +37,22 @@
     <a href="#" class="styled-link">iPhone</a>
     <a href="#" class="styled-link">Xiaomi</a>
     <a href="#" class="styled-link">Samsung</a>
-    <div id="banner">
-        <img id="banner" src="img/faixao.png">
-    </div>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <main>
-        <div class="circle-container">
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="img/iphone14promax (2).png" alt="Imagem 1">
-                    </div>
-                </div>
-                <p class="description">Iphone</p>
-            </div>
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="imagem2.jpg" alt="Imagem 2">
-                    </div>
-                </div>
-                <p class="description">Descrição 2</p>
-            </div>      
-            <div class="circle-desc">
-
-                <div class="circle">
-                    <div>
-                        <img src="imagem3.jpg" alt="Imagem 3">
-                    </div>
-                </div>
-                <p class="description">Descrição 3</p>
-            </div>
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="imagem4.jpg" alt="Imagem 4">
-                    </div>
-                </div>
-                <p class="description">Descrição 4</p>
-            </div>
+        <div class="login-form">
+            <form method="POST" action="principal.html" onsubmit="return validateForm()">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Senha" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="login-message"></p>
         </div>
+
     </main>
-    <br>
-    <br>
 
     <footer>
         <div class="footer-icons">

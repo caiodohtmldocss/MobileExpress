@@ -69,6 +69,7 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
+    position: fixed;
 }
 .footer-icons {
     display: flex;
@@ -93,13 +94,6 @@ footer {
     text-align: center;
 }
 
-#banner {
-    width: 70%;
-    text-align: center;
-    padding: 20px;
-    padding-right: 10px;
-}
-
 
 .styled-link {
     display: inline-block;
@@ -110,35 +104,86 @@ footer {
     font-weight: bold;
     transition: background-color 0.3s ease;
   }
-  #banner {
-    width: 95%;
-    text-align: center;
+
+.login-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    padding-left: 50px;
+    max-width: 400px;
+    width: 100%;
 }
-.circle-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
 
-  .circle {
-    width: 200px;
-    height: 200px;
-    background-color: rgba(128, 128, 128, 0.481);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .circle img {
-    max-width: 190px;
-    max-height: 190px;
-  }
-  .description {
-    font-family: 'roboto mono';
-    font-weight: bold;
+.logo-container {
     text-align: center;
+}
+
+.logo-container img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.login-form {
+    margin-top: 20px;
+}
+
+input,
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #0d1f73;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0d1f73;
+}
+
+
+
+.login-form {
+    margin: 0 auto;
+    background-color: rgba(128, 128, 128, 0.511);
+    padding: 70px;
+    border-radius: 10px;
+    width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#logo{
+    width: 180px;
+}
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
   }
-    
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+  }
+  
+  .menu-links {
+    display: none;
+    flex-direction: column;
+  }
+  
+  .menu-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+  }
+  
+  .menu-links.active {
+    display: flex;
+  }
