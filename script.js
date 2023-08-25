@@ -1,7 +1,8 @@
-function search() {
-    var searchInput = document.getElementById("searchInput").value;
-    
-    // Realizar ação de pesquisa aqui, por exemplo:
-    alert("Você pesquisou por: " + searchInput);
-}
+
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.classList.toggle("active");
+  }
+ 
+
 

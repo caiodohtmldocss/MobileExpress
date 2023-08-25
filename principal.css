@@ -13,7 +13,6 @@
     scroll-behavior: smooth !important;
 }
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -25,41 +24,15 @@ header {
 nav {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 120px;
     padding: 0 40px;
 }
 
-.logo{
-    position: absolute;
-    margin-left: -80%;
-}
-
-.search-bar {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 10px 0 0 5px;
-}
-
-.search-bar button {
-    padding: 5px 10px;
-    background-color: #444;
-    border: none;
-    color: white;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-}
 #logo {
  width: 180px;   
 }
-#searchInput{
-     width: 600px;
-}
+
 
 footer {
     background-color: var(--blue);
@@ -69,6 +42,7 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
+    position: fixed;
 }
 .footer-icons {
     display: flex;
@@ -99,8 +73,6 @@ footer {
     padding: 20px;
     padding-right: 10px;
 }
-
-
 .styled-link {
     display: inline-block;
     padding: 10px 20px;
@@ -113,8 +85,8 @@ footer {
   #banner {
     width: 95%;
     text-align: center;
-    padding: 20px;
-    padding-left: 50px;
+    padding: 15px;
+    padding-left: 45px;
 }
 .circle-container {
     display: flex;
@@ -137,8 +109,63 @@ footer {
     max-height: 190px;
   }
   .description {
-    font-family: 'roboto mono';
     font-weight: bold;
     text-align: center;
   }
+.navbar {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100;
+  }
+  
+  .hamburguer {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 2px 0;
+  }
+  
+  .menu {
+    width: 0;
+    height: 100%;
+    background-color: #0d207385;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    padding: 20px;
+    transition: left 0.5s, width 0.5s; /* Adiciona uma transição para a largura */
+    overflow-y: auto;
+    z-index: 99;
+  }
+  
+  .menu.active {
+    left: 0;
+    width: 250px; 
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    transition: 0.3s;
+  }
+  
+  .menu a:hover {
+    background-color: #acc9fc;
+  }
+  
+
+  @media (max-width: 1024px) {
+  nav {
     
+  }
+}

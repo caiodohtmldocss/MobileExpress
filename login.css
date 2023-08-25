@@ -25,40 +25,14 @@ header {
 nav {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 120px;
     padding: 0 40px;
 }
 
-.logo{
-    position: absolute;
-    margin-left: -80%;
-}
 
-.search-bar {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 10px 0 0 5px;
-}
-
-.search-bar button {
-    padding: 5px 10px;
-    background-color: #444;
-    border: none;
-    color: white;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-}
 #logo {
  width: 180px;   
-}
-#searchInput{
-     width: 600px;
 }
 
 footer {
@@ -95,15 +69,6 @@ footer {
 }
 
 
-.styled-link {
-    display: inline-block;
-    padding: 10px 20px;
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
 
 .login-container {
     background-color: #fff;
@@ -160,7 +125,15 @@ button:hover {
 #logo{
     width: 180px;
 }
-.menu-icon {
+.navbar {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100;
+  }
+  
+  .hamburguer {
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -170,20 +143,52 @@ button:hover {
     width: 25px;
     height: 3px;
     background-color: white;
-    margin: 3px 0;
+    margin: 2px 0;
   }
   
-  .menu-links {
-    display: none;
-    flex-direction: column;
+  .menu {
+    width: 0;
+    height: 100%;
+    background-color: #84a9ac;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    padding: 20px;
+    transition: left 0.5s, width 0.5s; /* Adiciona uma transição para a largura */
+    overflow-y: auto;
+    z-index: 99;
   }
   
-  .menu-links a {
+  .menu.active {
+    left: 0;
+    width: 250px; /* Define a largura do menu expandido */
+  }
+  
+  .menu a {
     color: white;
     text-decoration: none;
-    padding: 5px 0;
+    display: block;
+    padding: 10px 0;
+    transition: 0.3s;
   }
   
-  .menu-links.active {
-    display: flex;
+  .menu a:hover {
+    background-color: #648687;
   }
+.content {
+  margin-left: 250px; /* Largura do menu */
+  padding: 20px;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+@media (max-width: 1024px) {
+    .banner {
+      width: 100%;
+    }
+  }
+  

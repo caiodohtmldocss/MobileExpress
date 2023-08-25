@@ -30,10 +30,10 @@ function validateForm() {
 
   return true;
 }
-function toggleMenu() {
-  const menuLinks = document.getElementById('menuLinks');
-  menuLinks.classList.toggle('active');
-}
+
+
+
+
 
 
 
