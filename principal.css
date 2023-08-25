@@ -37,12 +37,13 @@ nav {
 footer {
     background-color: var(--blue);
     bottom: 0;
-    padding-bottom: 10px;
+    padding: -20px;
     margin: auto;
     bottom: 0;
     width: 100%;
     text-align: center;
-    position: fixed;
+    position: fixed
+
 }
 .footer-icons {
     display: flex;
@@ -67,12 +68,6 @@ footer {
     text-align: center;
 }
 
-#banner {
-    width: 70%;
-    text-align: center;
-    padding: 20px;
-    padding-right: 10px;
-}
 .styled-link {
     display: inline-block;
     padding: 10px 20px;
@@ -83,10 +78,10 @@ footer {
     transition: background-color 0.3s ease;
   }
   #banner {
-    width: 95%;
-    text-align: center;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
     padding: 15px;
-    padding-left: 45px;
 }
 .circle-container {
     display: flex;
@@ -164,8 +159,19 @@ footer {
   }
   
 
-  @media (max-width: 1024px) {
-  nav {
-    
+  @media (max-width: 978px) {
+  .circle {
+    display: none;
+  }
+  .circle-container{
+    flex-direction: column;
+  }
+  img{
+    padding: 0;
+    margin: 0;
+  }
+  #banner {
+    width: 100vw;
+    padding: 0 !important;
   }
 }
