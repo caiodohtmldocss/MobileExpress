@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password= $_POST['password'];
     
-    $usuario="alunosenai";
+    $usuario="alunosenai@gmail.com";
     $senhacerta="senha123";
 
     if($email===$usuario && $password===$senhacerta){

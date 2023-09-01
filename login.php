@@ -25,10 +25,11 @@
    <br>
     <main>
         <div class="login-form">
-            <form method="POST" action="principal.html" onsubmit="return validateForm()">
+            <form method="POST" action="validacao.php" onsubmit="return validateForm()">
                 <input type="email"  name="email" id="email" placeholder="Email" required>
                 <input type="password" name="password" id="password" placeholder="Senha" required>
-                <button type="submit">Login</button>
+                <!-- <button type="submit">Login</button> -->
+                <input class="botaologar" type="submit" value="ENTRAR">
             </form>
             <p id="login-message"></p>
         </div>
