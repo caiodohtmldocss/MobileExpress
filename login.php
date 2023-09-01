@@ -26,8 +26,8 @@
     <main>
         <div class="login-form">
             <form method="POST" action="principal.html" onsubmit="return validateForm()">
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Senha" required>
+                <input type="email"  name="email" id="email" placeholder="Email" required>
+                <input type="password" name="password" id="password" placeholder="Senha" required>
                 <button type="submit">Login</button>
             </form>
             <p id="login-message"></p>
