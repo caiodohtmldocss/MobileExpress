@@ -17,11 +17,11 @@
                 <img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
             <div class="menu" id="menu">
-                <a href="principal.html">Home</a>
-                <a href="indexiphone.html">Iphone</a>
-                <a href="indexxaiomi.html">Xiaomi</a>
-                <a href="indexmotorola.html">Motorola</a>
-                <a href="indexsamsung.html">Samsung</a>
+                <a href="index.php">Home</a>
+                <a href="indexiphone.php">Iphone</a>
+                <a href="indexxaiomi.php">Xiaomi</a>
+                <a href="indexmotorola.php">Motorola</a>
+                <a href="indexsamsung.php">Samsung</a>
             </div>
             <div class="navbar">
                 <div class="hamburguer" onclick="toggleMenu()">

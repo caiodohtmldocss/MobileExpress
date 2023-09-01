@@ -17,11 +17,11 @@
                 <img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
             <div class="menu" id="menu">
-                <a href="index.html">Home</a>
-                <a href="indexiphone.html">Iphone</a>
-                <a href="indexxaiomi.html">Xiaomi</a>
-                <a href="indexmotorola.html">Motorola</a>
-                <a href="indexsamsung.html">Samsung</a>
+                <a href="index.php">Home</a>
+                <a href="indexiphone.php">Iphone</a>
+                <a href="indexxaiomi.php">Xiaomi</a>
+                <a href="indexmotorola.php">Motorola</a>
+                <a href="indexsamsung.php">Samsung</a>
             </div>
             <div class="navbar">
                 <div class="hamburguer" onclick="toggleMenu()">
@@ -33,12 +33,15 @@
         </nav>
     </header>
     <main>
+        <div class="avatar">
+        <a href="login.php"><img src="./img/avatar.png" alt="Imagem" width="25px" ></a>
+</div>  
         <img id="banner" src="img/faixao.png">
         <div class="circle-container">
             <div class="circle-desc">
                 <div class="circle">
                     <div>
-                        <img src="img/iphone14promax (2).png" alt="Imagem 1">
+                        <img src="./img/iphone14promax (2).png" alt="Imagem 1">
                     </div>
                 </div>
                 <p class="description">Iphone</p>
