@@ -49,7 +49,7 @@
             <div class="circle-desc">
                 <div class="circle">
                     <div>
-                        <img src="" alt="Imagem 2">
+                        <img src="./img/motorolahome.png" alt="Imagem 2">
                     </div>
                 </div>
                 <p class="description">Motorola</p>
@@ -58,7 +58,7 @@
 
                 <div class="circle">
                     <div>
-                        <img src="imagem3.jpg" alt="Imagem 3">
+                        <img src="./img/samsunghome.png" alt="Imagem 3">
                     </div>
                 </div>
                 <p class="description">Samsung</p>
@@ -66,7 +66,7 @@
             <div class="circle-desc">
                 <div class="circle">
                     <div>
-                        <img src="imagem4.jpg" alt="Imagem 4">
+                        <img src="./img/xiaomihome.png" alt="Imagem 4">
                     </div>
                 </div>
                 <p class="description">Xiaomi</p>
