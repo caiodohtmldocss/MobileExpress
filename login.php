@@ -25,18 +25,11 @@
    <br>
     <main>
         <div class="login-form">
-<<<<<<< HEAD
-            <form method="POST" action="principal.html" onsubmit="return validateForm()">
-                <input type="email"  name="email" id="email" placeholder="Email" required>
-                <input type="password" name="password" id="password" placeholder="Senha" required>
-                <button type="submit">Login</button>
-=======
             <form method="POST" action="validacao.php" onsubmit="return validateForm()">
                 <input type="email"  name="email" id="email" placeholder="Email" required>
                 <input type="password" name="password" id="password" placeholder="Senha" required>
                 <!-- <button type="submit">Login</button> -->
                 <input class="botaologar" type="submit" value="ENTRAR">
->>>>>>> 377334d2f7424387fc85a0df2eee7c74e286ca16
             </form>
             <p id="login-message"></p>
         </div>
