@@ -130,7 +130,7 @@ footer {
   position: relative;
   width: 100px;
   height: 40px;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 1390px;
   justify-content: flex-end;
   grid-template-columns: 1fr auto;
