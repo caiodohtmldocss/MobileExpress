@@ -49,7 +49,7 @@
             <div class="circle-desc">
                 <div class="circle">
                     <div>
-                        <img src="./img/motorolahome-removebg-preview.png.png" alt="Imagem 2">
+                        <img src="./img/motorolahome-removebg-preview.png" alt="Imagem 2">
                     </div>
                 </div>
                 <p class="description">Motorola</p>
