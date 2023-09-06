@@ -36,7 +36,7 @@
         <div class="teste">
             <a class="avatar" href="login.php"><img src="./img/avatar.png" alt="Imagem" width="25px" ></a>
         </div>  
-        <img id="banner" src="img/faixao.png">
+        <img id="banner" src="img/faixa.png">
         <div class="circle-container">
             <div class="circle-desc">
                 <div class="circle">

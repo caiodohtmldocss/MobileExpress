@@ -94,7 +94,7 @@ footer {
 .circle {
   width: 200px;
   height: 200px;
-  background-color: rgba(128, 128, 128, 0.481);
+  background-color: #ffa319b8;
   border-radius: 50%;
   display: flex;
   justify-content: center;
