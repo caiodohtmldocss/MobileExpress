@@ -14,7 +14,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img id="logo" src="img/logome.png" alt="Logo da Empresa">
+            <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
             <div class="menu" id="menu">
                 <a href="admindex.php">Home</a>
