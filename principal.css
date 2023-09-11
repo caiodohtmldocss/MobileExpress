@@ -115,33 +115,6 @@ footer {
   margin: 0 auto;
 }
 
-.avatar {
-  display: flex;
-  margin-left: 735px;
-  background-color: #acc9fc;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  display: inline-block;
-  text-decoration: none;
-  font-size: 6px;
-  cursor: pointer;
-  position: relative;
-  width: 100px;
-  height: 40px;
-  margin-top: 20px;
-  margin-left: 1390px;
-  justify-content: flex-end;
-  grid-template-columns: 1fr auto;
-}
-
-.teste {
-  float: left;
-  text-align: left;
-  align-items: left;
-}
-
 .navbar {
   color: white;
   display: flex;
@@ -214,13 +187,50 @@ footer {
 }
 
 
+#my-button {
+  background-color: white;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  position: fixed;
+  right: 100px;
+}
+
+#my-button img {
+  width: 20px; /* Defina o tamanho da imagem conforme necessário */
+  height: 20px;
+}
+
+
+
+
+
+
+
+
 @media (max-width: 978px) {
   .circle {
     display: none;
+    /* margin-left: 30px; */
+    
+    
+
   }
+.description{
+  margin-top: 10px;
+}
+
 
   .circle-container {
     flex-direction: column;
+    /* position: fixed; */
+    /* right: 300px;
+    top: 300px; */
+    /* margin-left: 30px; */
+    margin-block: 30px;
+   
+    
   }
 
   img {
@@ -236,4 +246,9 @@ footer {
 
 .botaologar {
   background-color: aqua;
+}
+@media (max-width: 978px) {
+  footer {
+    position: fixed;
+  }
 }

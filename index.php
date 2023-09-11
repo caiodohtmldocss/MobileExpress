@@ -16,13 +16,16 @@
             <div class="logo">
                 <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
+            <button id="my-button">
+            <a class="avatar" href="login.php"><img src="./img/avatar.png" alt="Imagem" width="25px" ></a>
+        </button>
             <div class="menu" id="menu">
                 <a href="index.php">Home</a>
                 <a href="indexiphone.php">Iphone</a>
                 <a href="indexxaiomi.php">Xiaomi</a>
                 <a href="indexmotorola.php">Motorola</a>
                 <a href="indexsamsung.php">Samsung</a>
-            </div>
+            </div> 
             <div class="navbar">
                 <div class="hamburguer" onclick="toggleMenu()">
                     <div class="bar"></div>
@@ -33,9 +36,7 @@
         </nav>
     </header>
     <main>
-        <div class="teste">
-            <a class="avatar" href="login.php"><img src="./img/avatar.png" alt="Imagem" width="25px" ></a>
-        </div>  
+        
         <img id="banner" src="img/faixa.png">
         <div class="circle-container">
             <div class="circle-desc">
