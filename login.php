@@ -45,11 +45,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         <nav>
             
             <div class="logo">
-<<<<<<< HEAD
                 <img id="logo" src="./img/logome.png" alt="Logo da Empresa">
-=======
-            <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
->>>>>>> 9c989e7068211e3554588b196fcf872195da19a8
             </div>
         </nav>
     </header>
