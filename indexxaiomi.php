@@ -33,7 +33,7 @@
         </nav>
     </header>
     <div id="banner">
-        <img id="banner" src="img/xaiomi.png" alt="">
+        <img id="banner" src="img/iphone6.png" alt="">
     </div>
 
     <main id="product-list">
