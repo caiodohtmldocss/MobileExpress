@@ -193,7 +193,9 @@ footer {
   padding: 5px 5px;
   border-radius: 3px;
   cursor: pointer;
-  position: fixed;
+  position: absolute;
+  display: block;
+  margin: 0 auto;
   right: 100px;
 }
 
