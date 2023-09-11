@@ -1,3 +1,33 @@
+<?php
+include('conexao.php');
+
+if($_SERVER["REQUEST_METHOD"] === "POST") {
+
+        $email = $mysqli->real_escape_string($_POST['email']);
+        $senha = $mysqli->real_escape_string($_POST['senha']);
+
+        $sql_code = "SELECT * FROM usuarioadm WHERE email = '$email' AND senha = '$senha'";
+        $sql_query = $mysqli->query($sql_code);
+
+        $quantidade = $sql_query->num_rows;
+
+        if ($quantidade >= 1) {
+            session_start();
+            $usuario = $sql_query->fetch_assoc();
+
+            $_SESSION['user'] = $usuario['id'];
+            $_SESSION['nome'] = $usuario['nome'];
+
+            header("Location: painel.php");
+            exit();
+        } else {
+            echo"Falha ao Logar! Email ou senha Incorretos";
+        }
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -15,7 +45,7 @@
         <nav>
             
             <div class="logo">
-                <img id="logo" src="img/logome.png" alt="Logo da Empresa">
+                <img id="logo" src="./img/logome.png" alt="Logo da Empresa">
             </div>
         </nav>
     </header>
@@ -24,15 +54,20 @@
    <br>
    <br>
     <main>
-        <div class="login-form">
-            <form method="POST" action="validacao.php" onsubmit="return validateForm()">
-                <input type="email"  name="email" id="email" placeholder="Email" required>
-                <input type="password" name="password" id="password" placeholder="Senha" required>
-                <!-- <button type="submit">Login</button> -->
-                <input class="botaologar" type="submit" value="ENTRAR">
-            </form>
-            <p id="login-message"></p>
-        </div>
+       <div class="login-form">
+    <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
+        <p>
+        <label>Email</label>
+        <input type="text" name="email">
+        </p>
+        <p>
+        <label>Senha</label>
+        <input type="password" name="senha">
+        </p>
+        <input id="botaodokrl" type="submit" value="Entrar"></input>
+</div>
+
+    </form>
 
     </main>
 
