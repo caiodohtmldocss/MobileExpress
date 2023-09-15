@@ -18,9 +18,9 @@
             </div>
     </header>
     <main>
-        
+<form>  
     <div class="produto">
-        <img src="imagem_produto1.jpg" alt="Produto 1">
+        <img src="img/12.png" alt="Produto 1">
         <h2>Produto 1</h2>
         <p>Descrição do Produto 1</p>
         <p>Preço: R$ 50,00</p>
@@ -43,7 +43,7 @@
     </div>
 
     <button onclick="finalizarCompra()">Finalizar Compra</button>
-
+</form>
     <footer>
         <div class="footer-icons">
             <a class="items-social-media" href="https://www.facebook.com/senaitaubate">
