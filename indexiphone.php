@@ -37,7 +37,7 @@
 
     <main id="product-list">
         <div class="product">
-            <img src="img/iphone14promax (2).png" alt="Item 1">
+            <img src="img/iphoneofc.png" alt="Item 1">
             <h2>Iphone 14 Pro Max 128GB</h2>
             <p>R$ 8.661,32 à vista</p>
         </div>

@@ -42,7 +42,7 @@
             <div class="circle-desc">
                 <div class="circle">
                     <div>
-                        <img src="./img/iphone14promax.png" alt="Imagem 1">
+                        <img src="./img/iphoneofc.png" alt="Imagem 1">
                     </div>
                 </div>
                 <a class="description" href="indexiphone.php">Iphone</a>
