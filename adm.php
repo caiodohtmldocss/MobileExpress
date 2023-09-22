@@ -14,14 +14,14 @@
     <header>
         <nav>
             <div class="logo">
-                <img id="logo" src="img/logome.png" alt="Logo da Empresa">
+                <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
             <div class="menu" id="menu">
-                <a href="admindex.php">Home</a>
-                <a href="admindexiphone.php">Iphone</a>
-                <a href="admindexxaiomi.php">Xiaomi</a>
-                <a href="admindexmotorola.php">Motorola</a>
-                <a href="admindexsamsung.php">Samsung</a>
+                <a href="index.php">Home</a>
+                <a href="indexiphone.php">Iphone</a>
+                <a href="indexxaiomi.php">Xiaomi</a>
+                <a href="indexmotorola.php">Motorola</a>
+                <a href="indexsamsung.php">Samsung</a>
             </div>
             <div class="navbar">
                 <div class="hamburguer" onclick="toggleMenu()">
@@ -33,46 +33,45 @@
         </nav>
     </header>
     <main>
-    <div class="alterar">
-     <a href="login.php" class="button-bg"><img src="./img/lixo.png" alt="Imagem" width="25px"></a>
-     <a href="login.php" class="button-bg"><img src="./img/lapis.png" alt="Imagem" width="25px"></a>
-     <a href="login.php" class="button-bg"><img src="./img/add.png" alt="Imagem" width="25px"></a>
-   </div>
-
-        <img id="banner" src="img/faixao.png">
+        <div class="alterar">
+            <a href="login.php" class="button-bg"><img src="./img/lixo.png" alt="Imagem" width="25px"></a>
+            <a href="login.php" class="button-bg"><img src="./img/lapis.png" alt="Imagem" width="25px"></a>
+            <a href="login.php" class="button-bg"><img src="./img/add.png" alt="Imagem" width="25px"></a>
+        </div>
+        <img id="banner" src="img/faixa.png">
         <div class="circle-container">
             <div class="circle-desc">
                 <div class="circle">
                     <div>
-                        <img src="./img/iphone14promax (2).png" alt="Imagem 1">
+                        <img src="./img/iphoneofc.png" alt="Imagem 1">
                     </div>
                 </div>
-                <p class="description">Iphone</p>
+                <a class="description" href="indexiphone.php">Iphone</a>
             </div>
             <div class="circle-desc">
                 <div class="circle">
                     <div>
-                        <img src="" alt="Imagem 2">
+                        <img src="./img/motorolahome-removebg-preview.png" alt="Imagem 2">
                     </div>
                 </div>
-                <p class="description">Motorola</p>
+                <a class="description" href="indexmotorola.php">Motorola</a>
             </div>
             <div class="circle-desc">
 
                 <div class="circle">
                     <div>
-                        <img src="imagem3.jpg" alt="Imagem 3">
+                        <img src="./img/samsungofc.png" alt="Imagem 3">
                     </div>
                 </div>
-                <p class="description">Samsung</p>
+                <a class="description" href="indexsamsung.php">Samsung</a>
             </div>
             <div class="circle-desc">
                 <div class="circle">
                     <div>
-                        <img src="imagem4.jpg" alt="Imagem 4">
+                        <img src="./img/xiaomihome.png" alt="Imagem 4">
                     </div>
                 </div>
-                <p class="description">Xiaomi</p>
+                <a class="description" href="indexxaiomi.php">Xiaomi</a>
             </div>
         </div>
     </main>
