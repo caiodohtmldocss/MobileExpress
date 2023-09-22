@@ -32,6 +32,7 @@
             </div>
         </nav>
     </header>
+    <div id="banner">
         <img id="banner" src="img/faixaiphone.png" alt="">
     </div>
 
@@ -44,7 +45,7 @@
         <div class="product">
             <img src="img/iphone14.png" alt="Item 2">
             <h2>Iphone 14 128 GB</h2>
-            <p>R$ 6.296,75 sà vista</p>
+            <p>R$ 6.296,75 à vista</p>
         </div>
         <div class="product">
             <img src="img/iphone13promax.png" alt="Item 3">

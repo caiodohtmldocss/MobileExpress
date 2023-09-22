@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <title>Mobile Express</title>
@@ -32,51 +32,61 @@
             </div>
         </nav>
     </header>
-    <main>
-        <div class="alterar">
-            <a href="#" class="button-bg"><img src="./img/lixo.png" alt="Imagem" width="20px"></a>
-            <a href="#" class="button-bg"><img src="./img/lapis.png" alt="Imagem" width="20px"></a>
-            <a href="#" class="button-bg"><img src="./img/adicionar.png" alt="Imagem" width="20px"></a>
-        </div>
-        <img id="banner" src="img/faixa.png">
-        <div class="circle-container">
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="./img/iphoneofc.png" alt="Imagem 1">
-                    </div>
-                </div>
-                <a class="description" href="indexiphone.php">Iphone</a>
-            </div>
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="./img/motorolahome-removebg-preview.png" alt="Imagem 2">
-                    </div>
-                </div>
-                <a class="description" href="indexmotorola.php">Motorola</a>
-            </div>
-            <div class="circle-desc">
+    <div class="alterar">
+        <a href="#" class="button-bg"><img src="./img/lixo.png" alt="Imagem" width="20px"></a>
+        <a href="#" class="button-bg"><img src="./img/lapis.png" alt="Imagem" width="20px"></a>
+        <a href="#" class="button-bg"><img src="./img/adicionar.png" alt="Imagem" width="20px"></a>
+    </div>
+    <div id="banner">
+        <img id="banner" src="img/xi.png" alt="">
+    </div>
 
-                <div class="circle">
-                    <div>
-                        <img src="./img/samsungofc.png" alt="Imagem 3">
-                    </div>
-                </div>
-                <a class="description" href="indexsamsung.php">Samsung</a>
-            </div>
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="./img/xiaomihome.png" alt="Imagem 4">
-                    </div>
-                </div>
-                <a class="description" href="indexxaiomi.php">Xiaomi</a>
-            </div>
+    <main id="product-list">
+        <div class="product">
+            <img src="img/Poco_X5_Pro_256GB-removebg-preview.png" alt="Item 1">
+            <h2>Poco X5 Pro 256GB</h2>
+            <p>R$ 1.579,94 à vista</p>
         </div>
+        <div class="product">
+            <img src="img/Redmi_12C_128GB-removebg-preview.png" alt="Item 2">
+            <h2>Redmi 12C 128GB</h2>
+            <p>R$ 798,00 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/xiaomi_13_lite-removebg-preview (1).png" alt="Item 3">
+            <h2>Xiaomi 13 Lite 256GB</h2>
+            <p>R$ 2.499,00 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/redmi_12_note-removebg-preview.png" alt="Item 4">
+            <h2>Redmi 12 Note 128GB </h2>
+            <p>R$ 1.012,59 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/11pro-removebg-preview.png" alt="Item 5">
+            <h2>Redmi Note 11 Pro 128GB</h2>
+            <p>R$ 1.990,00 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/Redmi_Note_10s-removebg-preview.png" alt="Item 6">
+            <h2>Redmi Note 10s 128GB</h2>
+            <p>R$ 1.185,03 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/Redmi_Note_12s_-removebg-preview.png" alt="Item 7">
+            <h2>Redmi Note 12s 256GB</h2>
+            <p>R$ 1.360,00 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/Redmi_10-removebg-preview.png" alt="Item 8">
+            <h2>Redmi 10 (2022) 128GB</h2>
+            <p>R$ 900,00 à vista</p>
+        </div>
+
+
     </main>
-    <br>
-    <br>
+
+
 
     <footer>
         <div class="footer-icons">

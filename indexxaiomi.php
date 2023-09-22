@@ -45,7 +45,7 @@
         <div class="product">
             <img src="img/Redmi_12C_128GB-removebg-preview.png" alt="Item 2">
             <h2>Redmi 12C 128GB</h2>
-            <p>R$ 798,00 sà vista</p>
+            <p>R$ 798,00 à vista</p>
         </div>
         <div class="product">
             <img src="img/xiaomi_13_lite-removebg-preview (1).png" alt="Item 3">

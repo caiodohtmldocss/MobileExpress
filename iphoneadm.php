@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <title>Mobile Express</title>
@@ -32,51 +32,61 @@
             </div>
         </nav>
     </header>
-    <main>
-        <div class="alterar">
-            <a href="#" class="button-bg"><img src="./img/lixo.png" alt="Imagem" width="20px"></a>
-            <a href="#" class="button-bg"><img src="./img/lapis.png" alt="Imagem" width="20px"></a>
-            <a href="#" class="button-bg"><img src="./img/adicionar.png" alt="Imagem" width="20px"></a>
-        </div>
-        <img id="banner" src="img/faixa.png">
-        <div class="circle-container">
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="./img/iphoneofc.png" alt="Imagem 1">
-                    </div>
-                </div>
-                <a class="description" href="indexiphone.php">Iphone</a>
-            </div>
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="./img/motorolahome-removebg-preview.png" alt="Imagem 2">
-                    </div>
-                </div>
-                <a class="description" href="indexmotorola.php">Motorola</a>
-            </div>
-            <div class="circle-desc">
+    <div class="alterar">
+        <a href="#" class="button-bg"><img src="./img/lixo.png" alt="Imagem" width="20px"></a>
+        <a href="#" class="button-bg"><img src="./img/lapis.png" alt="Imagem" width="20px"></a>
+        <a href="#" class="button-bg"><img src="./img/adicionar.png" alt="Imagem" width="20px"></a>
+    </div>
+    <div id="banner">
+        <img id="banner" src="img/faixaiphone.png" alt="">
+    </div>
 
-                <div class="circle">
-                    <div>
-                        <img src="./img/samsungofc.png" alt="Imagem 3">
-                    </div>
-                </div>
-                <a class="description" href="indexsamsung.php">Samsung</a>
-            </div>
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="./img/xiaomihome.png" alt="Imagem 4">
-                    </div>
-                </div>
-                <a class="description" href="indexxaiomi.php">Xiaomi</a>
-            </div>
+    <main id="product-list">
+        <div class="product">
+            <img src="img/iphoneofc.png" alt="Item 1">
+            <h2>Iphone 14 Pro Max 128GB</h2>
+            <p>R$ 8.661,32 à vista</p>
         </div>
+        <div class="product">
+            <img src="img/iphone14.png" alt="Item 2">
+            <h2>Iphone 14 128 GB</h2>
+            <p>R$ 6.296,75 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/iphone13promax.png" alt="Item 3">
+            <h2>Iphone 13 Pro Max 128GB</h2>
+            <p>R$ 8.499,00 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/iphone13.png" alt="Item 4">
+            <h2>Iphone 13 256GB</h2>
+            <p>R$ 8.599,00 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/iphone12mini.png" alt="Item 5">
+            <h2>Iphone 12 Mini 64GB</h2>
+            <p>R$ 3.999,00 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/iphone11 (2).png" alt="Item 6">
+            <h2>Iphone 11 128GB</h2>
+            <p>R$ 3.544,44 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/1164.png" alt="Item 7">
+            <h2>Iphone 11 64GB</h2>
+            <p>R$ 3.049,79 à vista</p>
+        </div>
+        <div class="product">
+            <img src="img/12.png" alt="Item 8">
+            <h2>Iphone 12 128GB</h2>
+            <p>R$ 3.936,47 à vista</p>
+        </div>
+
+
     </main>
-    <br>
-    <br>
+
+
 
     <footer>
         <div class="footer-icons">

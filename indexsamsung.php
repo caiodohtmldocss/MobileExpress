@@ -45,7 +45,7 @@
         <div class="product">
             <img src="img/Galaxy_A14_64GB-removebg-preview.png" alt="Item 2">
             <h2>Galaxy A14 64GB</h2>
-            <p>R$ 922,90 sà vista</p>
+            <p>R$ 922,90 à vista</p>
         </div>
         <div class="product">
             <img src="img/Z_Flip4_256GB-removebg-preview.png" alt="Item 3">

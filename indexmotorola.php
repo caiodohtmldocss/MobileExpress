@@ -45,7 +45,7 @@
         <div class="product">
             <img src="img/G53-removebg-preview.png" alt="Item 2">
             <h2>Motorola Moto G53 128GB</h2>
-            <p>R$ 1.129,00 sà vista</p>
+            <p>R$ 1.129,00 à vista</p>
         </div>
         <div class="product">
             <img src="img/E13-removebg-preview.png" alt="Item 3">
