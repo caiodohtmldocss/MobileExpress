@@ -34,9 +34,9 @@
     </header>
     <main>
         <div class="alterar">
-            <a href="login.php" class="button-bg"><img src="./img/lixo.png" alt="Imagem" width="25px"></a>
-            <a href="login.php" class="button-bg"><img src="./img/lapis.png" alt="Imagem" width="25px"></a>
-            <a href="login.php" class="button-bg"><img src="./img/add.png" alt="Imagem" width="25px"></a>
+            <a href="login.php" class="button-bg"><img src="./img/lixo.png" alt="Imagem" width="20px"></a>
+            <a href="login.php" class="button-bg"><img src="./img/lapis.png" alt="Imagem" width="20px"></a>
+            <a href="login.php" class="button-bg"><img src="./img/adicionar.png" alt="Imagem" width="20px"></a>
         </div>
         <img id="banner" src="img/faixa.png">
         <div class="circle-container">
