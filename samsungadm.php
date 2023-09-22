@@ -17,7 +17,7 @@
                 <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
             <div class="menu" id="menu">
-                <a href="index.php">Home</a>
+                <a href="adm.php">Home</a>
                 <a href="iphoneadm.php">Iphone</a>
                 <a href="xiaomiadm.php">Xiaomi</a>
                 <a href="motorolaadm.php">Motorola</a>

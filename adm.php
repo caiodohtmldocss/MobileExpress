@@ -17,7 +17,7 @@
                 <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
             <div class="menu" id="menu">
-                <a href="index.php">Home</a>
+                <a href="adm.php">Home</a>
                 <a href="iphoneadm.php">Iphone</a>
                 <a href="xiaomiadm.php">Xiaomi</a>
                 <a href="motorolaadm.php">Motorola</a>
@@ -46,7 +46,7 @@
                         <img src="./img/iphoneofc.png" alt="Imagem 1">
                     </div>
                 </div>
-                <a class="description" href="indexiphone.php">Iphone</a>
+                <a class="description" href="iphoneadm.php">Iphone</a>
             </div>
             <div class="circle-desc">
                 <div class="circle">
@@ -54,7 +54,7 @@
                         <img src="./img/motorolahome-removebg-preview.png" alt="Imagem 2">
                     </div>
                 </div>
-                <a class="description" href="indexmotorola.php">Motorola</a>
+                <a class="description" href="motorolaadm.php">Motorola</a>
             </div>
             <div class="circle-desc">
 
@@ -63,7 +63,7 @@
                         <img src="./img/samsungofc.png" alt="Imagem 3">
                     </div>
                 </div>
-                <a class="description" href="indexsamsung.php">Samsung</a>
+                <a class="description" href="samsungadm.php">Samsung</a>
             </div>
             <div class="circle-desc">
                 <div class="circle">
@@ -71,7 +71,7 @@
                         <img src="./img/xiaomihome.png" alt="Imagem 4">
                     </div>
                 </div>
-                <a class="description" href="indexxaiomi.php">Xiaomi</a>
+                <a class="description" href="xiaomiadm.php">Xiaomi</a>
             </div>
         </div>
     </main>
