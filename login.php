@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type="password" name="senha">
                 </p>
                 <input id="botaodokrl" type="submit" value="Entrar">
-                <a href="redefinir.php">Esqueceu sua Senha? Redefinir Senha!</a>
+                <a  id="botao" href="redefinir.php">Redefinir sua senha</a>
             </form>
         </div>
     </main>
