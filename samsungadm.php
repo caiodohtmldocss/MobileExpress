@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -15,14 +14,14 @@
     <header>
         <nav>
             <div class="logo">
-            <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
+                <a href="adm.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
             <div class="menu" id="menu">
-                <a href="index.php">Home</a>
-                <a href="indexiphone.php">Iphone</a>
-                <a href="indexxaiomi.php">Xiaomi</a>
-                <a href="indexmotorola.php">Motorola</a>
-                <a href="indexsamsung.php">Samsung</a>
+                <a href="adm.php">Home</a>
+                <a href="iphoneadm.php">Iphone</a>
+                <a href="xiaomiadm.php">Xiaomi</a>
+                <a href="motorolaadm.php">Motorola</a>
+                <a href="samsungadm.php">Samsung</a>
             </div>
             <div class="navbar">
                 <div class="hamburguer" onclick="toggleMenu()">
@@ -33,36 +32,20 @@
             </div>
         </nav>
     </header>
+    <div class="alterar">
+        <a href="#" class="button-bg"><img src="./img/lixo.png" alt="Imagem" width="20px"></a>
+        <a href="#" class="button-bg"><img src="./img/lapis.png" alt="Imagem" width="20px"></a>
+        <a href="#" class="button-bg"><img src="./img/adicionar.png" alt="Imagem" width="20px"></a>
+    </div>
     <div id="banner">
         <img id="banner" src="img/samsung.png" alt="">
     </div>
-    <main id="product-list">
-<<<<<<< HEAD
-    
-    <?php
-            include("conexao.php");
 
-            // Faça a consulta SQL
-            $sql = "SELECT * FROM celulares WHERE marca_celulares = 'samsung'";
-            $resultado = $mysqli->query($sql);
-            
-            // Verifique se a consulta foi bem-sucedida
-            if ($resultado) {
-                if ($resultado->num_rows > 0) {
-                    while ($row = $resultado->fetch_assoc()) {
-                        echo '<div class="product">';
-                        echo "<img src='" . $row["imagem_celulares"] . "'>";
-                        echo "<p class='name'>" . $row["nome_celulares"] . "</p>";
-                        echo "<p class='price'>R$" . $row["preco_celulares"] . "</p>";
-                        echo '<a href="editar_celular.php?id=' . $row["id_celulares"] . '">Editar</a>';
-                        echo '<a href="excluir_celular.php?id=' . $row["id_celulares"] . '">Excluir</a>';
-                        echo '<a href="adicionar_celular.php?id=' . $row["id_celulares"] . '">Adicionar</a>';
-                        echo "</div>";
-=======
+    <main id="product-list">
         <div class="product">
             <img src="img/Galaxy_S22_Ultra_256GB-removebg-preview.png" alt="Item 1">
             <h2>Galaxy S22 Ultra 256GB</h2>
-            <p>R$  4.499,00 à vista</p>
+            <p>R$ 4.499,00 à vista</p>
         </div>
         <div class="product">
             <img src="img/Galaxy_A14_64GB-removebg-preview.png" alt="Item 2">
@@ -99,23 +82,10 @@
             <h2>Galaxy S10 128GB</h2>
             <p>R$ 3.114,99 à vista</p>
         </div>
->>>>>>> 8f746826a6e8c1d0ef394d049f02aaa0afd51eeb
 
 
-                        
-                    }
+    </main>
 
-                } else {
-                    echo "Nenhum resultado encontrado.";
-                }
-            } else {
-                die("Erro na consulta: " . $mysqli->error);
-            }
-           
-            ?>
-</main>
-    
-    
 
 
     <footer>
