@@ -37,49 +37,40 @@
     </div>
 
     <main id="product-list">
-        <div class="product">
-            <img src="img/Poco_X5_Pro_256GB-removebg-preview.png" alt="Item 1">
-            <h2>Poco X5 Pro 256GB</h2>
-            <p>R$   1.579,94 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Redmi_12C_128GB-removebg-preview.png" alt="Item 2">
-            <h2>Redmi 12C 128GB</h2>
-            <p>R$ 798,00 sà vista</p>
-        </div>
-        <div class="product">
-            <img src="img/xiaomi_13_lite-removebg-preview (1).png" alt="Item 3">
-            <h2>Xiaomi 13 Lite 256GB</h2>
-            <p>R$ 2.499,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/redmi_12_note-removebg-preview.png" alt="Item 4">
-            <h2>Redmi 12 Note 128GB </h2>
-            <p>R$  1.012,59 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/11pro-removebg-preview.png" alt="Item 5">
-            <h2>Redmi Note 11 Pro 128GB</h2>
-            <p>R$ 1.990,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Redmi_Note_10s-removebg-preview.png" alt="Item 6">
-            <h2>Redmi Note 10s 128GB</h2>
-            <p>R$ 1.185,03 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Redmi_Note_12s_-removebg-preview.png" alt="Item 7">
-            <h2>Redmi Note 12s 256GB</h2>
-            <p>R$ 1.360,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Redmi_10-removebg-preview.png" alt="Item 8">
-            <h2>Redmi 10 (2022) 128GB</h2>
-            <p>R$ 900,00 à vista</p>
-        </div>
+    
+        <?php
+                include("conexao.php");
+
+                // Faça a consulta SQL
+                $sql = "SELECT * FROM celulares WHERE marca_celulares = 'xiaomi'";
+                $resultado = $mysqli->query($sql);
+                
+                // Verifique se a consulta foi bem-sucedida
+                if ($resultado) {
+                    if ($resultado->num_rows > 0) {
+                        while ($row = $resultado->fetch_assoc()) {
+                            echo '<div class="product">';
+                            echo "<img src='" . $row["imagem_celulares"] . "'>";
+                            echo "<p class='name'>" . $row["nome_celulares"] . "</p>";
+                            echo "<p class='price'>R$" . $row["preco_celulares"] . "</p>";
+                            echo '<a href="editar_celular.php?id=' . $row["id_celulares"] . '">Editar</a>';
+                            echo '<a href="excluir_celular.php?id=' . $row["id_celulares"] . '">Excluir</a>';
+                            echo '<a href="adicionar_celular.php?id=' . $row["id_celulares"] . '">Adicionar</a>';
+                            echo "</div>";
 
 
-    </main>
+                            
+                        }
+
+                    } else {
+                        echo "Nenhum resultado encontrado.";
+                    }
+                } else {
+                    die("Erro na consulta: " . $mysqli->error);
+                }
+               
+                ?>
+</main>
 
 
 

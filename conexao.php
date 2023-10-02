@@ -1,7 +1,7 @@
 <?php
 session_start();
 $hostname = "localhost";
-$bancodedados = "login";
+$bancodedados = "bd_mobileexpress";
 $usuario = "root";
 $senha = "";
 

@@ -36,49 +36,40 @@
     </div>
 
     <main id="product-list">
-        <div class="product">
-            <img src="img/iphoneofc.png" alt="Item 1">
-            <h2>Iphone 14 Pro Max 128GB</h2>
-            <p>R$ 8.661,32 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/iphone14.png" alt="Item 2">
-            <h2>Iphone 14 128 GB</h2>
-            <p>R$ 6.296,75 sà vista</p>
-        </div>
-        <div class="product">
-            <img src="img/iphone13promax.png" alt="Item 3">
-            <h2>Iphone 13 Pro Max 128GB</h2>
-            <p>R$ 8.499,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/iphone13.png" alt="Item 4">
-            <h2>Iphone 13 256GB</h2>
-            <p>R$ 8.599,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/iphone12mini.png" alt="Item 5">
-            <h2>Iphone 12 Mini 64GB</h2>
-            <p>R$ 3.999,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/iphone11 (2).png" alt="Item 6">
-            <h2>Iphone 11 128GB</h2>
-            <p>R$ 3.544,44 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/1164.png" alt="Item 7">
-            <h2>Iphone 11 64GB</h2>
-            <p>R$ 3.049,79 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/12.png" alt="Item 8">
-            <h2>Iphone 12 128GB</h2>
-            <p>R$ 3.936,47 à vista</p>
-        </div>
+    
+    <?php
+            include("conexao.php");
+
+            // Faça a consulta SQL
+            $sql = "SELECT * FROM celulares WHERE marca_celulares = 'iphone'";
+            $resultado = $mysqli->query($sql);
+            
+            // Verifique se a consulta foi bem-sucedida
+            if ($resultado) {
+                if ($resultado->num_rows > 0) {
+                    while ($row = $resultado->fetch_assoc()) {
+                        echo '<div class="product">';
+                        echo "<img src='" . $row["imagem_celulares"] . "'>";
+                        echo "<p class='name'>" . $row["nome_celulares"] . "</p>";
+                        echo "<p class='price'>R$" . $row["preco_celulares"] . "</p>";
+                        echo '<a href="editar_celular.php?id=' . $row["id_celulares"] . '">Editar</a>';
+                        echo '<a href="excluir_celular.php?id=' . $row["id_celulares"] . '">Excluir</a>';
+                        echo '<a href="adicionar_celular.php?id=' . $row["id_celulares"] . '">Adicionar</a>';
+                        echo "</div>";
 
 
-    </main>
+                        
+                    }
+
+                } else {
+                    echo "Nenhum resultado encontrado.";
+                }
+            } else {
+                die("Erro na consulta: " . $mysqli->error);
+            }
+           
+            ?>
+</main>
 
 
 

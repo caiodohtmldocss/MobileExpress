@@ -1,35 +1,28 @@
 <?php
 include('conexao.php');
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = $mysqli->real_escape_string($_POST['email']);
-    $senha = $mysqli->real_escape_string($_POST['senha']);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recupere os dados do formulário
+    $email = $_POST["email"];
+    $novaSenha = $_POST["nova_senha"];
+    $confirmarSenha = $_POST["confirmar_senha"];
 
-    $sql_code = "SELECT * FROM funcionario WHERE email = '$email'";
-    $sql_query = $mysqli->query($sql_code);
+    // Valide os dados (verifique se os campos estão preenchidos, se o email é válido, etc.)
 
-    if ($sql_query->num_rows >= 1) {
-        $linha = $sql_query->fetch_assoc();
-        $senha_hash = $linha['senha'];
+    if ($novaSenha == $confirmarSenha) {
 
-        if (password_verify($senha, $senha_hash)) {
-            // Senha correta'''''''''   '   
-            session_start();
-            $_SESSION['user'] = $linha['id'];
-            $_SESSION['nome'] = $linha['nome'];
-
-            header("Location: painel.php");
-            exit();
-        } else {
-            // Senha incorreta
-            echo "Falha ao Logar! Email ou senha Incorretos";
-        }
+        echo "Senha redefinida com sucesso!";
+        header('Location:login.php');
     } else {
-        // Usuário não encontrado
-        echo "Falha ao Logar! Email ou senha Incorretos";
+        echo "As senhas não coincidem. Tente novamente.";
     }
 }
+
+
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -45,31 +38,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
     <header>
         <nav>
-            
+
             <div class="logo">
                 <img id="logo" src="./img/logome.png" alt="Logo da Empresa">
             </div>
         </nav>
     </header>
-   <br>
-   <br>
-   <br>
-   <br>
+
     <main>
         <div class="login-form">
-            <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
-                <p>
-                <label>Email</label>
-                <input type="text" name="email">
-                </p>
-                <p>
-                <label>Senha</label>
-                <input type="password" name="senha">
-                </p>
-                <input id="botaodokrl" type="submit" value="Entrar">
-                <a href="redefinir.php">Esqueceu sua Senha? Redefinir Senha!</a>
+            <form action="processar_redefinicao.php" method="POST">
+                <h2>Redefinir Senha</h2>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" required>
+                <br>
+                <label for="nova_senha">Nova Senha:</label>
+                <input type="password" name="nova_senha" id="nova_senha" required>
+                <br>
+                <label for="confirmar_senha">Confirmar Nova Senha:</label>
+                <input type="password" name="confirmar_senha" id="confirmar_senha" required>
+                <br>
+                <input class="botaologar" type="submit" value="Redefinir Senha">
             </form>
-        </div>
+            
     </main>
     
     <footer>
