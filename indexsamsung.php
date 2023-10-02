@@ -37,7 +37,6 @@
         <img id="banner" src="img/samsung.png" alt="">
     </div>
     <main id="product-list">
-<<<<<<< HEAD
     
     <?php
             include("conexao.php");
@@ -58,48 +57,6 @@
                         echo '<a href="excluir_celular.php?id=' . $row["id_celulares"] . '">Excluir</a>';
                         echo '<a href="adicionar_celular.php?id=' . $row["id_celulares"] . '">Adicionar</a>';
                         echo "</div>";
-=======
-        <div class="product">
-            <img src="img/Galaxy_S22_Ultra_256GB-removebg-preview.png" alt="Item 1">
-            <h2>Galaxy S22 Ultra 256GB</h2>
-            <p>R$  4.499,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Galaxy_A14_64GB-removebg-preview.png" alt="Item 2">
-            <h2>Galaxy A14 64GB</h2>
-            <p>R$ 922,90 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Z_Flip4_256GB-removebg-preview.png" alt="Item 3">
-            <h2>Galaxy Z Flip4 256GB</h2>
-            <p>R$ 4.293,07 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Galaxy_S21_FE_128_GB-removebg-preview.png" alt="Item 4">
-            <h2>Galaxy S21 FE 128 GB</h2>
-            <p>R$ 2.399,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Galaxy_M24_256GB-removebg-preview.png" alt="Item 5">
-            <h2>Galaxy M24 256GB</h2>
-            <p>R$ 1793,50 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Galaxy_M23_128GB-removebg-preview.png" alt="Item 6">
-            <h2>Galaxy M23 128GB</h2>
-            <p>R$ 1.485,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Galaxy_A04s_64GB-removebg-preview.png" alt="Item 7">
-            <h2>Galaxy A04s 64GB</h2>
-            <p>R$ 764,10 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Galaxy_S10-removebg-preview.png" alt="Item 8">
-            <h2>Galaxy S10 128GB</h2>
-            <p>R$ 3.114,99 à vista</p>
-        </div>
->>>>>>> 8f746826a6e8c1d0ef394d049f02aaa0afd51eeb
 
 
                         

@@ -29,7 +29,23 @@ nav {
     height: 80px;
     padding: 0 40px;
 }
+#botao {
+  display: inline-block;
+  padding: 5px 5px;
+  background-color: #0d1f73; 
+  color: #fff; /* Cor do texto do botão */
+  text-decoration: none; /* Remover sublinhado padrão em links */
+  border: none; /* Remover borda do botão */
+  border-radius: 5px; /* Cantos arredondados */
 
+  align-items: center;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+#botao:hover {
+  background-color: #0056b3; /* Cor de fundo quando o mouse está sobre o botão */
+}
 
 #logo {
  width: 180px;   
