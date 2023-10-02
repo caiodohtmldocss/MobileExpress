@@ -16,6 +16,9 @@
             <div class="logo">
                 <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
+            <button id="my-button">
+            <a class="avatar" href="index.php"><img src="./img/logout.png" alt="Imagem" width="25px" ></a>
+        </button>
             <div class="menu" id="menu">
                 <a href="adm.php">Home</a>
                 <a href="iphoneadm.php">Iphone</a>
@@ -33,11 +36,6 @@
         </nav>
     </header>
     <main>
-        <div class="alterar">
-            <a href="#" class="button-bg"><img src="./img/lixo.png" alt="Imagem" width="20px"></a>
-            <a href="#" class="button-bg"><img src="./img/lapis.png" alt="Imagem" width="20px"></a>
-            <a href="#" class="button-bg"><img src="./img/adicionar.png" alt="Imagem" width="20px"></a>
-        </div>
         <img id="banner" src="img/faixa.png">
         <div class="circle-container">
             <div class="circle-desc">

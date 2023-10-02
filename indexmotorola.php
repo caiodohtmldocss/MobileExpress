@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="inicial.css">
     <script src="script.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <title>Mobile Express</title>
@@ -33,7 +33,6 @@
         </nav>
     </header>
     <main id="product-list">
-<<<<<<< HEAD
     
     <?php
             include("conexao.php");
@@ -50,52 +49,7 @@
                         echo "<img src='" . $row["imagem_celulares"] . "'>";
                         echo "<p class='name'>" . $row["nome_celulares"] . "</p>";
                         echo "<p class='price'>R$" . $row["preco_celulares"] . "</p>";
-                        echo '<a href="editar_celular.php?id=' . $row["id_celulares"] . '">Editar</a>';
-                        echo '<a href="excluir_celular.php?id=' . $row["id_celulares"] . '">Excluir</a>';
-                        echo '<a href="adicionar_celular.php?id=' . $row["id_celulares"] . '">Adicionar</a>';
                         echo "</div>";
-=======
-        <div class="product">
-            <img src="img/E22.png" alt="Item 1">
-            <h2>Motorola Moto E22 128 GB</h2>
-            <p>R$  868,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/G53-removebg-preview.png" alt="Item 2">
-            <h2>Motorola Moto G53 128GB</h2>
-            <p>R$ 1.129,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/E13-removebg-preview.png" alt="Item 3">
-            <h2>Motorola Moto E13 64 GB</h2>
-            <p>R$ 1.099,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/G52-removebg-preview.png" alt="Item 4">
-            <h2>Motorola Moto G52 128GB</h2>
-            <p>R$ 1.999,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/Edge30-removebg-preview.png" alt="Item 5">
-            <h2>Motorola Moto Edge 30 Neo 256GB</h2>
-            <p>R$ 3.499,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/G23-removebg-preview.png" alt="Item 6">
-            <h2>Motorola Moto G23  128GB</h2>
-            <p>R$ 1.599,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/G42-removebg-preview (1).png" alt="Item 7">
-            <h2>Motorola Moto G42 128GB</h2>
-            <p>R$ 999,00 à vista</p>
-        </div>
-        <div class="product">
-            <img src="img/G32-removebg-preview.png" alt="Item 8">
-            <h2>Motorola Moto  G32 128GB</h2>
-            <p>R$ 1.499,00 à vista</p>
-        </div>
->>>>>>> 8f746826a6e8c1d0ef394d049f02aaa0afd51eeb
 
 
                         

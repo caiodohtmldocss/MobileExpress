@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['user'] = $linha['id'];
             $_SESSION['nome'] = $linha['nome'];
 
-            header("Location: painel.php");
+            header("Location: adm.php");
             exit();
         } else {
             // Senha incorreta
