@@ -1,5 +1,4 @@
 <?php
-session_start();
 $hostname = "localhost";
 $bancodedados = "bd_mobileexpress";
 $usuario = "root";
