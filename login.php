@@ -22,11 +22,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit();
         } else {
             // Senha incorreta
-            echo "Falha ao Logar! Email ou senha Incorretos";
+            echo '<script>alert("Senha Incorreta Inserida!");</script>';
+            echo '<script>
+                setTimeout(function(){
+                    window.location.href = "login.php";
+                }, 1); // Redireciona após 1 segundo
+              </script>';;
         }
     } else {
-        // Usuário não encontrado
-        echo "Falha ao Logar! Email ou senha Incorretos";
+        echo '<script>alert("Usuario Não Encontrado!");</script>';
+            echo '<script>
+                setTimeout(function(){
+                    window.location.href = "login.php";
+                }, 1); // Redireciona após 1 segundo
+              </script>';;
     }
 }
 ?>

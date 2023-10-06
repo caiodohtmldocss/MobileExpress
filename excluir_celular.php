@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             echo '<script>
                 setTimeout(function(){
                     window.location.href = "adm.php";
-                }, 1000); // Redireciona após 1 segundo
+                }, 1); // Redireciona após 1 segundo
               </script>';
         } else {
             die("Erro na atualização: " . $mysqli->error);
