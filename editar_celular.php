@@ -69,10 +69,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($mysqli->query($sql)) {
             echo '<script>alert("Registro atualizado com sucesso!");</script>';
             echo '<script>
-                setTimeout(function(){
+                alert("Registro atualizado com sucesso!");
+                redirectToAdmPage();
+                
+                function redirectToAdmPage() {
                     window.location.href = "adm.php";
-                }, 1000); // Redireciona após 1 segundo
-              </script>';
+                }
+            </script>';
         } else {
             die("Erro na atualização: " . $mysqli->error);
         }

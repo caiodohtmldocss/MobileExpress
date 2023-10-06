@@ -36,12 +36,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $sql = "DELETE FROM celulares WHERE id_celulares = $id";
 
         if ($mysqli->query($sql)) {
-            echo '<script>alert("Registro excluido com sucesso!");</script>';
-            echo '<script>
-                setTimeout(function(){
-                    window.location.href = "adm.php";
-                }, 1000); // Redireciona após 1 segundo
-              </script>';
+            '<script>
+                alert("Registro excluído com sucesso!");
+                redirectToAdmPage();
+                
+                function redirectToAdmPage() {
+                    setTimeout(function(){
+                        window.location.href = "adm.php";
+                    }, 1000); // Redireciona após 1 segundo
+                }
+            </script>';
         } else {
             die("Erro na atualização: " . $mysqli->error);
         }
