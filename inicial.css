@@ -50,7 +50,7 @@ nav {
 }
 
 #logo {
- width: 180px;   
+ width: 180px;  
 }
 #searchInput{
      width: 600px;
@@ -88,8 +88,6 @@ footer {
     text-align: center;
 }
 
-
-
 #product-list {
     display: flex;
     flex-wrap: wrap;
@@ -123,6 +121,9 @@ footer {
 }
 
 
+.name{
+  font-weight: bold;
+}
 
 #banner {
     width: 95%;

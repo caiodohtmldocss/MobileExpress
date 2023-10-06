@@ -1,3 +1,6 @@
+<?php
+include('conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -11,24 +14,15 @@
 </head>
 
 <body>
-    <header>
+<header>
         <nav>
-        <form action="pagina.php">
-        <div class="search-container">
-        <div class="search-box">
-            <input class="search-input" name="busca" value="<?php if(isset($_GET['busca'])) echo ($_GET['busca']) ?>" placeholder="Procure um celular" type="text">
-            <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
-        </div>
-    </div>
-    </form>
-    <br>
             <div class="logo">
-            <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
+                <a href="adm.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
             <div class="menu" id="menu">
-            <a href="index.php">Home</a>
+                <a href="index.php">Home</a>
                 <a href="indexiphone.php">Iphone</a>
-                <a href="indexxaiomi.php">Xiaomi</a>
+                <a href="indexsaiomi.php">Xiaomi</a>
                 <a href="indexmotorola.php">Motorola</a>
                 <a href="indexsamsung.php">Samsung</a>
             </div>
@@ -41,43 +35,44 @@
             </div>
         </nav>
     </header>
+    
     <div id="banner">
-        <img id="banner" src="img/motorola.png" alt="">
+        <img id="banner" src="img/faixaiphone.png" alt="">
     </div>
+
     <main id="product-list">
     
-    <?php
+            <?php
             include("conexao.php");
-
-            // Faça a consulta SQL
-            $sql = "SELECT * FROM celulares WHERE marca_celulares = 'motorola'";
-            $resultado = $mysqli->query($sql);
-            
-            // Verifique se a consulta foi bem-sucedida
-            if ($resultado) {
-                if ($resultado->num_rows > 0) {
-                    while ($row = $resultado->fetch_assoc()) {
-                        echo '<div class="product">';
-                        echo "<img src='" . $row["imagem_celulares"] . "'>";
-                        echo "<p class='name'>" . $row["nome_celulares"] . "</p>";
-                        echo "<p class='price'>R$" . $row["preco_celulares"] . "</p>";
-                        echo "</div>";
-
-
-                        
-                    }
-
-                } else {
-                    echo "Nenhum resultado encontrado.";
-                }
+            if (!isset($_GET['busca'])) {
+                // Handle the case when no search query is provided.
+                // You can display a message or do something else here.
             } else {
-                die("Erro na consulta: " . $mysqli->error);
+                $pesquisa = $mysqli->real_escape_string($_GET['busca']);
+                $sql_code = "SELECT *
+                   FROM celulares 
+                   WHERE marca_celulares LIKE '%$pesquisa%' 
+                   OR preco_celulares LIKE '%$pesquisa%' 
+                   OR nome_celulares LIKE '%$pesquisa%'";
+                $sql_query = $mysqli->query($sql_code) or die("ERRO ao consultar! " . $mysqli->error);
+            
+                if ($sql_query->num_rows == 0) {
+                    echo "Nenhum resultado...";
+                } else {
+                    while ($dados = $sql_query->fetch_assoc()) {
+                        // Display each product as a div element.
+                        echo '<div class="product">';
+                        echo "<img src='" . $dados['imagem_celulares'] . "'>";
+                        echo "<p class='marca'>" . $dados['marca_celulares'] . "</p>";
+                        echo "<p class='nome'>" . $dados['nome_celulares'] . "</p>";
+                        echo "<p class='preco'>R$" . $dados['preco_celulares'] . "</p>";
+                        echo "</div>";
+                    }
+                }
             }
-           
             ?>
+            
 </main>
-
-    
 
 
 

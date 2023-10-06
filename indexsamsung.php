@@ -14,6 +14,14 @@
 <body>
     <header>
         <nav>
+        <form action="pagina.php">
+        <div class="search-container">
+        <div class="search-box">
+            <input class="search-input" name="busca" value="<?php if(isset($_GET['busca'])) echo ($_GET['busca']) ?>" placeholder="Procure um celular" type="text">
+            <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+    </form>
             <div class="logo">
             <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>

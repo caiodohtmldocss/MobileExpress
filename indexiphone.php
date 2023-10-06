@@ -18,7 +18,7 @@ include('conexao.php');
 <body>
     <header>
         <nav>
-        <form action="">
+        <form class="pesq" action="pagina.php">
         <div class="search-container">
         <div class="search-box">
             <input class="search-input" name="busca" value="<?php if(isset($_GET['busca'])) echo ($_GET['busca']) ?>" placeholder="Procure um celular" type="text">
@@ -26,53 +26,9 @@ include('conexao.php');
         </div>
     </div>
     </form>
-    <br>
-        <?php
-        if (!isset($_GET['busca'])) {
-          ?>
-        <?php
-
-} else {
-    $pesquisa = $mysqli->real_escape_string($_GET['busca']);
-    $sql_code = "SELECT *
-       FROM celulares 
-       WHERE marca_celulares LIKE '%$pesquisa%' 
-       OR preco_celulares LIKE '%$pesquisa%' 
-       OR nome_celulares LIKE '%$pesquisa%'";
-    $sql_query = $mysqli->query($sql_code) or die("ERRO ao consultar! " . $mysqli->error); 
-    
-    if($sql_query->num_rows == 0) {
-    ?> 
-        <table>
-            <tr class="no-results">
-                <td colspan="4">Nenhum resultado...</td>
-            </tr>
-        </table>
-    <?php 
-    } else { 
-    ?>
-        <table>
-            <tr>
-                <th>Imagem</th>
-                <th>Marca</th>
-                <th>Nome</th>
-                <th>Preço</th>
-            </tr>
-            <?php 
-            while($dados = $sql_query->fetch_assoc()) {
-            ?>
-                <tr>
-                    <td><?php echo $dados['imagem_celulares']; ?></td>
-                    <td><?php echo $dados['marca_celulares']; ?></td>
-                    <td><?php echo $dados['nome_celulares']; ?></td>
-                    <td><?php echo $dados['preco_celulares']; ?></td>
-                </tr>
-            <?php
-            } 
-        }
-    }    
-    ?>
-</table>
+    <div class="logo">
+            <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
+            </div>
 
             <div class="menu" id="menu">
             <a href="index.php">Home</a>

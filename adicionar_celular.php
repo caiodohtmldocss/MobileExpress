@@ -14,11 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO celulares (nome_celulares, marca_celulares, descricao_celures, preco_celulares, imagem_celulares) VALUES ('$nome', '$marca', '$descricao', '$preco', '$url_imagem')";
 
         if ($mysqli->query($sql)) {
-            echo '<script>alert("Registro atualizado com sucesso!");</script>';
+            echo '<script>alert("Celular adicionado com sucesso!");</script>';
             echo '<script>
                 setTimeout(function(){
                     window.location.href = "adm.php";
-                }, 1000); // Redireciona após 1 segundo
+                }, 1); // Redireciona após 1 segundo
               </script>';
         } else {
             die("Erro na inserção: " . $mysqli->error);

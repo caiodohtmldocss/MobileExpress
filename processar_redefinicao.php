@@ -35,7 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Atualize a senha no banco de dados
     $query = "UPDATE funcionario SET senha='$senhaHash' WHERE email='$email'";
     if (mysqli_query($conexao, $query)) {
-        echo "Senha redefinida com sucesso!";
+        echo '<script>alert("Senha Alterada com Sucesso!");</script>';
+        echo '<script>
+            setTimeout(function(){
+                window.location.href = "login.php";
+            }, 1); // Redireciona após 1 segundo
+          </script>';
     } else {
         echo "Erro ao redefinir a senha: " . mysqli_error($conexao);
     }
