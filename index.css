@@ -205,7 +205,124 @@
     height: 20px;
   }
   
+  .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.search-box {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #f2f2f2;
+    border-radius: 25px; /* Half of the height for cylindrical effect */
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+}
+
+.search-box:hover {
+    width: 250px;
+}
+
+.search-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 25px; /* Half of the height for cylindrical effect */
+}
+
+.search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    border-top-right-radius: 25px; /* Half of the height for cylindrical effect */
+    border-bottom-right-radius: 25px; /* Half of the height for cylindrical effect */
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+.link-detalhes {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.link-detalhes:hover {
+  background-color: #0056b3;
+}
   
+  .menu a:hover {
+    background-color: #acc9fc;
+  }
+  @media (max-width: 978px) {
+
+    #banner {
+      width: 100vw;
+      padding: 0 !important;
+    }
+    .search-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+  }
+  
+  .search-box {
+      position: relative;
+      width: 200px; /* Largura fixa de 200 pixels */
+      height: 50px;
+      background-color: #f2f2f2;
+      border-radius: 25px; /* Metade da altura para o efeito cilíndrico */
+      overflow: hidden;
+  }
+  
+  .search-input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      padding: 10px;
+      border-radius: 25px; /* Metade da altura para o efeito cilíndrico */
+  }
+  
+  .search-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 50px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-top-right-radius: 25px; /* Metade da altura para o efeito cilíndrico */
+      border-bottom-right-radius: 25px; /* Metade da altura para o efeito cilíndrico */
+  }
+  
+  /* Remova a transição de largura no hover */
+  .search-button:hover {
+      background-color: #0056b3;
+      transition: none;
+  }
+}
   
   
   

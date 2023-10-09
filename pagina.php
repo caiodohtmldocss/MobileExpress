@@ -17,7 +17,7 @@ include('conexao.php');
 <header>
         <nav>
             <div class="logo">
-                <a href="adm.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
+                <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
             <div class="menu" id="menu">
                 <a href="index.php">Home</a>
@@ -37,7 +37,7 @@ include('conexao.php');
     </header>
     
     <div id="banner">
-        <img id="banner" src="img/faixaiphone.png" alt="">
+        <img id="banner" src="img/faixa.png" alt="">
     </div>
 
     <main id="product-list">
