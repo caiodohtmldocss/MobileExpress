@@ -63,10 +63,12 @@ include('conexao.php');
             if ($resultado) {
                 if ($resultado->num_rows > 0) {
                     while ($row = $resultado->fetch_assoc()) {
+                        $produto = $row;
                         echo '<div class="product">';
                         echo "<img src='" . $row["imagem_celulares"] . "'>";
                         echo "<p class='name'>" . $row["nome_celulares"] . "</p>";
                         echo "<p class='price'>R$" . $row["preco_celulares"] . "</p>";
+                        echo "<a href='detalhes.php?id=" . $produto['id_celulares'] . "' class='link-detalhes'>Comprar</a>";
                         echo "</div>";
 
 

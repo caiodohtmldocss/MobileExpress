@@ -1,24 +1,20 @@
+<?php
+include('conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <script src="script.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <title>Mobile Express</title>
+    <link rel="stylesheet" href="compra.css">
+    <title>Detalhes do Produto</title>
 </head>
-
 <body>
-    <header>
+<header>
         <nav>
             <div class="logo">
                 <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
-            <button id="my-button">
-            <a class="avatar" href="login.php"><img src="./img/avatar.png" alt="Imagem" width="25px" ></a>
-        </button>
             <div class="menu" id="menu">
                 <a href="index.php">Home</a>
                 <a href="indexiphone.php">Iphone</a>
@@ -36,46 +32,35 @@
         </nav>
     </header>
     <main>
-        
-        <img id="banner" src="img/faixa.png">
-        <div class="circle-container">
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="./img/iphoneofc.png" alt="Imagem 1">
-                    </div>
-                </div>
-                <a class="description" href="indexiphone.php">Iphone</a>
-            </div>
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="./img/motorolahome-removebg-preview.png" alt="Imagem 2">
-                    </div>
-                </div>
-                <a class="description" href="indexmotorola.php">Motorola</a>
-            </div>
-            <div class="circle-desc">
+    <div class="product-details">
+        <!-- Miniaturas das imagens à esquerda -->
+        <?php
+    $sql = "SELECT * FROM celulares";
+    $result = $mysqli->query($sql);
 
-                <div class="circle">
-                    <div>
-                        <img src="./img/samsungofc.png" alt="Imagem 3">
-                    </div>
-                </div>
-                <a class="description" href="indexsamsung.php">Samsung</a>
-            </div>
-            <div class="circle-desc">
-                <div class="circle">
-                    <div>
-                        <img src="./img/xiaomihome.png" alt="Imagem 4">
-                    </div>
-                </div>
-                <a class="description" href="indexxaiomi.php">Xiaomi</a>
-            </div>
-        </div>
-    </main>
-    <br>
-    <br>
+    if ($result->num_rows > 0) {
+        $produto = $result->fetch_assoc();
+        echo '<div class="thumbnail-images">';
+        echo '<img src="' . $produto['imagem_celulares2'] . '" alt="Miniatura 2" onclick="trocarImagem(\'' . $produto['imagem_celulares2'] . '\')">';
+        echo '<img src="' . $produto['imagem_celulares3'] . '" alt="Miniatura 3" onclick="trocarImagem(\'' . $produto['imagem_celulares3'] . '\')">';
+        echo '<img src="' . $produto['imagem_celulares4'] . '" alt="Miniatura 4" onclick="trocarImagem(\'' . $produto['imagem_celulares4'] . '\')">';
+        echo '<img src="' . $produto['imagem_celulares5'] . '" alt="Miniatura 5" onclick="trocarImagem(\'' . $produto['imagem_celulares5'] . '\')">';
+        echo '</div>';
+        echo '<div class="main-image">';
+        echo '<img id="imagem-grande" src="' . $produto['imagem_celulares'] . '" alt="' . $produto['nome_celulares'] . '">';
+        echo '</div>';
+        echo '<form class="formcomprar"';
+        echo '<div class="product-info">';
+        echo '<h1 class="product-name">' . $produto['nome_celulares'] . '</h1>';
+        echo '<p class="product-description">' . $produto['descricao_celures'] . '</p>';
+        echo '<p class="product-price">Preço: R$ ' . number_format($produto['preco_celulares'], 2, ',', '.') . '</p>';
+        echo '<button class="buy-button" onclick="comprarAgora()">Comprar Agora</button>';
+        echo '</div>';
+        echo '</form>';
+    }
+?>
+    <script src="script.js"></script>
+</main>
 
     <footer>
         <div class="footer-icons">
@@ -101,7 +86,6 @@
             <p>(12) 3653-1943</p>
         </div>
     </footer>
-
 </body>
-
 </html>
+            

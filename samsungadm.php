@@ -42,6 +42,11 @@
     <main id="product-list">
     
         <?php
+        if (isset($_SESSION['user'])) {
+    
+        } else {
+            header("Location: login.php");
+        }
                 include("conexao.php");
 
                 // Faça a consulta SQL

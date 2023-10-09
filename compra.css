@@ -335,3 +335,53 @@ footer {
   
   }
   
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estilo para a div das miniaturas à esquerda */
+.thumbnail-images {
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail-images img {
+    width: 100px;
+    height: auto;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+/* Estilo para a imagem principal no lado direito */
+.main-image img {
+    max-width: 550px;
+    max-height: 550px;
+}
+
+/* Estilo para a div das informações do produto */
+.product-info {
+    flex: 1;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Estilo para o botão "Comprar Agora" */
+.buy-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.formcomprar {
+  margin: 30px auto;
+  background-color: rgba(128, 128, 128, 0.511);
+  padding: 70px;
+  border-radius: 10px;
+  width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

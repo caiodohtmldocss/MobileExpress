@@ -1,10 +1,17 @@
+<?php
+if (isset($_SESSION['user'])) {
+    
+} else {
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="index.css">
     <script src="script.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <title>Mobile Express</title>
@@ -17,7 +24,7 @@
                 <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
             <button id="my-button">
-            <a class="avatar" href="index.php"><img src="./img/logout.png" alt="Imagem" width="25px" ></a>
+            <a class="avatar" href="logout.php"><img src="./img/logout.png" alt="Imagem" width="25px" ></a>
         </button>
             <div class="menu" id="menu">
                 <a href="adm.php">Home</a>

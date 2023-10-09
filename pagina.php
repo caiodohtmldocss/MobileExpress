@@ -22,7 +22,7 @@ include('conexao.php');
             <div class="menu" id="menu">
                 <a href="index.php">Home</a>
                 <a href="indexiphone.php">Iphone</a>
-                <a href="indexsaiomi.php">Xiaomi</a>
+                <a href="indexxaiomi.php">Xiaomi</a>
                 <a href="indexmotorola.php">Motorola</a>
                 <a href="indexsamsung.php">Samsung</a>
             </div>

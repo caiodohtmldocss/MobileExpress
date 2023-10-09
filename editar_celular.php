@@ -24,6 +24,11 @@
 </header>
 
 <?php
+if (isset($_SESSION['user'])) {
+    
+} else {
+    header("Location: login.php");
+}
 include("conexao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
