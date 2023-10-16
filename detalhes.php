@@ -1,13 +1,22 @@
 <?php
 include('conexao.php');
+if (isset($_GET['id'])) {
+    $id_produto = $_GET['id'];
 
+    // Consulta SQL para buscar informações do produto na tabela id_celulares
+    $sql = "SELECT * FROM celulares WHERE id_celulares = $id_produto";
+    $result = $mysqli->query($sql);
+    if ($result->num_rows > 0) {
+        $produto = $result->fetch_assoc();
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="compra.css">
+    <link rel="stylesheet" href="compras.css">
     <title>Detalhes do Produto</title>
 </head>
 <body>
@@ -33,36 +42,33 @@ include('conexao.php');
         </nav>
     </header>
     <main>
-    <div class="product-details">
-        <!-- Miniaturas das imagens à esquerda -->
-        <?php
-
-    $sql = "SELECT * FROM celulares_celulares WHERE id_celulares = $id_celulares";
-    $result = $mysqli->query($sql);
-
-    if ($result->num_rows > 0) {
-        $produto = $result->fetch_assoc();
-        echo '<div class="thumbnail-images">';
-        echo '<img src="' . $produto['imagem_celulares2'] . '" alt="Miniatura 2" onclick="trocarImagem(\'' . $produto['imagem_celulares2'] . '\')">';
-        echo '<img src="' . $produto['imagem_celulares3'] . '" alt="Miniatura 3" onclick="trocarImagem(\'' . $produto['imagem_celulares3'] . '\')">';
-        echo '<img src="' . $produto['imagem_celulares4'] . '" alt="Miniatura 4" onclick="trocarImagem(\'' . $produto['imagem_celulares4'] . '\')">';
-        echo '<img src="' . $produto['imagem_celulares5'] . '" alt="Miniatura 5" onclick="trocarImagem(\'' . $produto['imagem_celulares5'] . '\')">';
-        echo '</div>';
-        echo '<div class="main-image">';
-        echo '<img id="imagem-grande" src="' . $produto['imagem_celulares'] . '" alt="' . $produto['nome_celulares'] . '">';
-        echo '</div>';
-        echo '<form class="formcomprar"';
-        echo '<div class="product-info">';
-        echo '<h1 class="product-name">' . $produto['nome_celulares'] . '</h1>';
-        echo '<p class="product-description">' . $produto['descricao_celures'] . '</p>';
-        echo '<p class="product-price">Preço: R$ ' . number_format($produto['preco_celulares'], 2, ',', '.') . '</p>';
-        echo '<button class="buy-button" onclick="comprarAgora()">Comprar Agora</button>';
-        echo '</div>';
-        echo '</form>';
-    }
-?>
+        <div class="product-details">
+            <!-- Miniaturas das imagens à esquerda -->
+            <div class="thumbnail-images">
+                <?php
+                if (isset($_GET['id'])) {
+                    // Exibir as miniaturas das imagens com as funções JavaScript associadas
+                    echo '<img src="' . $produto['imagem_celulares2'] . '" alt="Miniatura 2" onclick="trocarImagem(\'' . $produto['imagem_celulares2'] . '\')">';
+                    echo '<img src="' . $produto['imagem_celulares3'] . '" alt="Miniatura 3" onclick="trocarImagem(\'' . $produto['imagem_celulares3'] . '\')">';
+                    echo '<img src="' . $produto['imagem_celulares4'] . '" alt="Miniatura 4" onclick="trocarImagem(\'' . $produto['imagem_celulares4'] . '\')">';
+                    echo '<img src="' . $produto['imagem_celulares5'] . '" alt="Miniatura 5" onclick="trocarImagem(\'' . $produto['imagem_celulares5'] . '\')">';
+                }
+                ?>
+            </div>
+            <div class="main-image">
+                <img id="imagem-grande" src="<?php echo $produto['imagem_celulares']; ?>" alt="<?php echo $produto['nome_celulares']; ?>">
+            </div>
+            <div class="formcomprar">
+                <h1 class="product-name"><?php echo $produto['nome_celulares']; ?></h1>
+                <p class="product-description"><?php echo $produto['descricao_celures']; ?></p>
+                <p class="product-price">Preço: R$ <?php echo number_format($produto['preco_celulares'], 2, ',', '.'); ?></p>
+                <button class="buy-button" onclick="comprarAgora()">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </main>
     <script src="script.js"></script>
-</main>
+
+
 
     <footer>
         <div class="footer-icons">
@@ -90,4 +96,5 @@ include('conexao.php');
     </footer>
 </body>
 </html>
+
             

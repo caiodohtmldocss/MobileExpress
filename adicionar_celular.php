@@ -24,14 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO celulares (nome_celulares, marca_celulares, descricao_celures, preco_celulares, imagem_celulares, imagem_celulares2, imagem_celulares3, imagem_celulares4, imagem_celulares5) VALUES ('$nome', '$marca', '$descricao', '$preco', '$url_imagem', '$url_imagem2', '$url_imagem3', '$url_imagem4', '$url_imagem5')";
 
         if ($mysqli->query($sql)) {
-            echo '<script>alert("Celular adicionado com sucesso!");</script>';
-            echo '<script>
-                setTimeout(function(){
-                    window.location.href = "adm.php";
-                }, 1); // Redireciona após 1 segundo
-              </script>';
+            echo '<script>';
+                    echo'alert("Registro Adicionado com sucesso!");';
+                    echo'redirectToAdmPage();';
+                    
+                    echo'function redirectToAdmPage() {';
+                        echo'window.location.href = "adm.php";';
+                    echo'};'; 
+                    // Redireciona após 1 segundo
+                echo'</script>';
         } else {
-            die("Erro na inserção: " . $mysqli->error);
+            die("Erro ao Adicionar: " . $mysqli->error);
         }
     } else {
         echo "Campos obrigatórios não preenchidos.";

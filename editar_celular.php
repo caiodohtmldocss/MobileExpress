@@ -74,15 +74,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "UPDATE celulares SET nome_celulares = '$nome', preco_celulares = '$preco' WHERE id_celulares = $id";
 
         if ($mysqli->query($sql)) {
-            echo '<script>alert("Registro atualizado com sucesso!");</script>';
-            echo '<script>
-                alert("Registro atualizado com sucesso!");
-                redirectToAdmPage();
-                
-                function redirectToAdmPage() {
-                    window.location.href = "adm.php";
-                }, 1); // Redireciona após 1 segundo
-              </script>';
+            echo '<script>';
+                    echo'alert("Registro atualizado com sucesso!");';
+                    echo'redirectToAdmPage();';
+                    
+                    echo'function redirectToAdmPage() {';
+                        echo'window.location.href = "adm.php";';
+                    echo'};'; 
+                    // Redireciona após 1 segundo
+                echo'</script>';
         } else {
             die("Erro na atualização: " . $mysqli->error);
         }

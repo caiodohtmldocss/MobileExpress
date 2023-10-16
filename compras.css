@@ -351,7 +351,7 @@ footer {
 .thumbnail-images img {
     width: 100px;
     height: auto;
-    margin: 5px 0;
+    margin: 5px 20px;
     cursor: pointer;
 }
 

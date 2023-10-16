@@ -23,7 +23,7 @@ if (isset($_SESSION['user'])) {
     <header>
         <nav>
             <div class="logo">
-                <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
+            <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
             </div>
             <button id="my-button">
             <a class="avatar" href="logout.php"><img src="./img/logout.png" alt="Imagem" width="25px" ></a>
