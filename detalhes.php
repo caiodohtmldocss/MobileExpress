@@ -1,5 +1,6 @@
 <?php
 include('conexao.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -35,7 +36,8 @@ include('conexao.php');
     <div class="product-details">
         <!-- Miniaturas das imagens à esquerda -->
         <?php
-    $sql = "SELECT * FROM celulares";
+
+    $sql = "SELECT * FROM celulares_celulares WHERE id_celulares = $id_celulares";
     $result = $mysqli->query($sql);
 
     if ($result->num_rows > 0) {
