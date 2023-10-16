@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['user'] = $linha['id'];
             $_SESSION['nome'] = $linha['nome'];
 
-            header("Location: adm.php");
+            header("location: adm.php");
             exit();
         } else {
             // Senha incorreta
@@ -46,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
-    <script src="validacao.php"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <title>Mobile Express</title>
 </head>

@@ -1,10 +1,11 @@
 <?php
+include 'conexao.php';
+session_start();
 if (isset($_SESSION['user'])) {
     
 } else {
     header("Location: login.php");
 }
-include("conexao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifique se os campos obrigatórios foram submetidos
