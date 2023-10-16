@@ -154,6 +154,9 @@ input{
     color: white;
     font-size: bold !important;
   }
+  #botaodokrl:hover {
+    background-color: #0056b3; /* Cor de fundo quando o mouse está sobre o botão */
+  }
   .bar {
     width: 25px;
     height: 3px;
