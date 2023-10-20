@@ -31,4 +31,5 @@ function trocarImagem(novaImagem) {
 }
 
 
+
  

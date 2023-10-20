@@ -32,6 +32,13 @@
             </div>
         </nav>
     </header>
+    <script>
+            function confirmDelete(id) {
+                if (confirm("Tem certeza de que deseja excluir este celular?")) {
+                    window.location.href = "excluir_celular.php?id=" + id;
+                }
+            }
+        </script>
     <div class="alterar">
     <a href="adicionar_celular.php" class="button-bg"><img src="./img/adicionar.png" alt="Imagem" width="20px"></a>
     </div>
@@ -59,13 +66,12 @@
                 if ($resultado) {
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
-                            echo '<div class="product">';
                             echo "<img src='" . $row["imagem_celulares"] . "'>";
-                            echo "<p class='name'>" . $row["nome_celulares"] . "</p>";
-                            echo "<p class='price'>R$" . $row["preco_celulares"] . "</p>";
-                            echo '<a class="botaocrud" href="editar_celular.php?id=' . $row["id_celulares"] . '">Editar</a>';
-                            echo '<button class="botaocrud"><a class="botaocrud" href="excluir_celular.php?id=' . $row["id_celulares"] . '">Excluir</a>';
-                            echo "</div>";
+            echo "<p class='name'>" . $row["nome_celulares"] . "</p>";
+            echo "<p class='price'>R$" . $row["preco_celulares"] . "</p>";
+            echo '<a class="botaocrud" href="editar_celular.php?id=' . $row["id_celulares"] . '">Editar</a>';
+            echo '<a class="botaocrud" onclick="confirmDelete(' . $row["id_celulares"] . ')">Excluir</a>';
+            echo "</div>";
 
 
                             

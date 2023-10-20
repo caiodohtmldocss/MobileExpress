@@ -278,6 +278,58 @@ footer {
 .link-detalhes:hover {
   background-color: #f0b15486;
 }
+.confirm-popup {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  text-align: center;
+}
+
+.confirm-popup h3 {
+  font-size: 18px;
+  margin: 0 0 20px;
+}
+
+.confirm-popup button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.confirm-popup button.cancel {
+  background-color: #ccc;
+}
+
+.confirm-popup button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para fundo escuro de sobreposição */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
   
   .menu a:hover {
     background-color: #acc9fc;

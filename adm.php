@@ -35,6 +35,7 @@ if (isset($_SESSION['user'])) {
 </nav>
 
     </header>
+    
     <main>
         <img id="banner" src="img/faixa.png">
         <div class="circle-container">
