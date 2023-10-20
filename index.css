@@ -196,7 +196,7 @@
     position: absolute;
     display: block;
     margin: 0 auto;
-    right: 100px;
+    right: 190px;
     background-color: #acc9fc;
   }
   
@@ -323,6 +323,7 @@
       transition: none;
   }
 }
+   
   
   
   

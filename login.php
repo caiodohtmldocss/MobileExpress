@@ -13,10 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $senha_hash = $linha['senha'];
 
         if (password_verify($senha, $senha_hash)) {
-            // Senha correta'''''''''   '   
+            // Senha correta
+
             session_start();
             $_SESSION['user'] = $linha['id'];
-            $_SESSION['nome'] = $linha['nome'];
+            $_SESSION['nome_usuario'] = $linha['nome']; // Defina a variável de sessão com o nome do usuário
 
             header("location: adm.php");
             exit();
@@ -26,16 +27,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             echo '<script>
                 setTimeout(function(){
                     window.location.href = "login.php";
-                }, 1); // Redireciona após 1 segundo
-              </script>';;
+                }, 1000); // Redireciona após 1 segundo
+              </script>';
         }
     } else {
         echo '<script>alert("Usuario Não Encontrado!");</script>';
-            echo '<script>
-                setTimeout(function(){
-                    window.location.href = "login.php";
-                }, 1); // Redireciona após 1 segundo
-              </script>';;
+        echo '<script>
+            setTimeout(function(){
+                window.location.href = "login.php";
+            }, 1000); // Redireciona após 1 segundo
+          </script>';
     }
 }
 ?>
