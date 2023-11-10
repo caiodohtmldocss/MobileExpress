@@ -1,29 +1,3 @@
-<?php
-include('conexao.php'); // Inclua o arquivo de conexão com o banco de dados
-
-$preco_produto = 0; // Defina um valor padrão para $preco_produto
-
-// Verifique se o ID do produto foi passado via GET
-if (isset($_GET['id'])) {
-    $id_produto = $_GET['id'];
-
-    // Consulta SQL para buscar o preço do produto na tabela "celulares"
-    $sql = "SELECT preco_celulares FROM celulares WHERE id_celulares = $id_produto";
-    $result = $mysqli->query($sql);
-
-    if ($result) { // Verifica se a consulta foi executada com sucesso
-        if ($result->num_rows > 0) {
-            $produto = $result->fetch_assoc();
-            $preco_produto = $produto['preco_celulares']; // Atualize o valor do preço do produto
-        } else {
-            echo "Produto não encontrado na base de dados.";
-        }
-    } else {
-        echo "Erro na consulta SQL: " . $mysqli->error;
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -141,9 +115,8 @@ if (isset($_GET['id'])) {
     
 
         <div class="center">
-        <label>Total:</label>
-        <p id="total">R$ <?php echo number_format($preco_produto, 2, ',', '.'); ?></p>
-        <button type="submit">Concluir Compra</button>
+        <label>Total:<p id="total">$100.00</p>
+            <button type="submit">Concluir Compra</button>
         </div>
     </form>
     <footer>
