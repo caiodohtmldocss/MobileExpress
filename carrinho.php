@@ -1,74 +1,146 @@
+<?php
+include("conexao.php"); // Inclua o arquivo de conexão
+
+session_start();
+
+if (!isset($_SESSION['carrinho'])) {
+    $_SESSION['carrinho'] = [];
+}
+
+if (isset($_POST['adicionar'])) {
+    $id_celular = $_POST['id_celular'];
+    $quantidade = $_POST['quantidade'];
+
+    // Execute uma consulta SQL para obter informações do celular com base no ID
+    $sql = "SELECT * FROM celulares WHERE id_celulares = $id_celular";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $produto = $row['nome_celulares']; // Nome do celular
+        $descricao = $row['descricao_celulares']; // Descrição do celular
+        $preco = $row['preco_celulares']; // Preço do celular
+        $imagem = $row['imagem_celulares']; // Nome da imagem do celular
+
+        $item = [
+            'id_celular' => $id_celular,
+            'produto' => $produto,
+            'descricao' => $descricao,
+            'preco' => $preco,
+            'imagem' => $imagem,
+            'quantidade' => $quantidade,
+        ];
+
+        array_push($_SESSION['carrinho'], $item);
+    }
+}
+?>
+
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="produto.css">
-    <script src="script.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <title>Mobile Express</title>
+    <title>Carrinho de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .carrinho-form {
+            margin: 20px 0;
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
-            </div>
-    </header>
-    <main>
-<form>  
-    <div class="produto">
-        <img src="img/12.png" alt="Produto 1">
-        <h2>Produto 1</h2>
-        <p>Descrição do Produto 1</p>
-        <p>Preço: R$ 50,00</p>
-        <label for="quantidade_produto1">Quantidade:</label>
-        <select id="quantidade_produto1" name="quantidade_produto1">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            </select>
-        <button onclick="removerProduto('produto1')">Remover Produto</button>
-    </div>
-    
-    <div>
-        <label for="frete">Calcular Frete:</label>
-        <input type="text" id="frete" name="frete">
-        <button onclick="calcularFrete()">Calcular</button>
-    </div>
+    <div class="container">
+        <h1>Produtos Disponíveis</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Adicionar ao Carrinho</th>
+                    <th>Imagem</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Execute uma consulta SQL para obter todos os celulares disponíveis
+                $sql = "SELECT * FROM celulares";
+                $result = $mysqli->query($sql);
 
-    <div id="subtotal">
-        <p>Subtotal: R$ 0,00</p>
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $id_celular = $row['id_celulares'];
+                        $produto = $row['nome_celulares'];
+                        $preco = $row['preco_celulares'];
+                        $imagem = $row['imagem_celulares'];
+
+                        echo "<tr>";
+                        echo "<td>$produto</td>";
+                        echo "<td>R$ $preco</td>";
+                        echo "<td>
+                                <form action='index.php' method='post' class='carrinho-form'>
+                                    <input type='hidden' name='id_celular' value='$id_celular'>
+                                    <input type='number' name='quantidade' value='1' min='1'>
+                                    <button type='submit' name='adicionar'>Adicionar</button>
+                                </form>
+                              </td>";
+                        echo "<td><img src='$imagem' alt='$produto' width='100'></td>";
+                        echo "</tr>";
+                    }
+                }
+                ?>
+            </tbody>
+        </table>
+        <h2>Seu Carrinho de Compras</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $total = 0;
+                foreach ($_SESSION['carrinho'] as $item) {
+                    $subtotal = $item['preco'] * $item['quantidade'];
+                    $total += $subtotal;
+                    echo "<tr>";
+                    echo "<td>{$item['produto']}</td>";
+                    echo "<td>R$ {$item['preco']}</td>";
+                    echo "<td>{$item['quantidade']}</td>";
+                    echo "<td>R$ $subtotal</td>";
+                    echo "</tr>";
+                }
+                ?>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td>R$ <?php echo $total; ?></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
-    <button onclick="finalizarCompra()">Finalizar Compra</button>
-</form>
-    <footer>
-        <div class="footer-icons">
-            <a class="items-social-media" href="https://www.facebook.com/senaitaubate">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a class="items-social-media" href="https://twitter.com/senai_taubate">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a class="items-social-media" href="https://www.instagram.com/senaitaubate/">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a class="items-social-media" href="https://br.linkedin.com/company/escolasenaitaubate">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a class="items-social-media" href="https://www.youtube.com/@SenaiSaoPauloSP">
-                <i class="fab fa-youtube"></i>
-            </a>
-        </div>
-        <div class="footer-link">
-            <strong>Sede Mobile Express - Pq. Residencial Maria Elmira (CE 207)</strong>
-            <p>Av. Monsenhor Theodomiro Lobo, 100 - Pq. Residencial Maria Elmira</p>
-            <p>(12) 3653-1943</p>
-        </div>
-    </footer>
-
 </body>
-
 </html>

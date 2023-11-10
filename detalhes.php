@@ -1,14 +1,19 @@
 <?php
 include('conexao.php');
+
 if (isset($_GET['id'])) {
     $id_produto = $_GET['id'];
 
-    // Consulta SQL para buscar informações do produto na tabela id_celulares
     $sql = "SELECT * FROM celulares WHERE id_celulares = $id_produto";
     $result = $mysqli->query($sql);
+
     if ($result->num_rows > 0) {
         $produto = $result->fetch_assoc();
+    } else {
+        die("Produto não encontrado.");
     }
+} else {
+    die("ID do produto não especificado.");
 }
 ?>
 <!DOCTYPE html>
@@ -62,7 +67,8 @@ if (isset($_GET['id'])) {
                 <h1 class="product-name"><?php echo $produto['nome_celulares']; ?></h1>
                 <p class="product-description"><?php echo $produto['descricao_celures']; ?></p>
                 <p class="product-price">Preço: R$ <?php echo number_format($produto['preco_celulares'], 2, ',', '.'); ?></p>
-                <button class="buy-button" onclick="comprarAgora()">Adicionar ao Carrinho</button>
+                <a href="comprar.php?id=<?php echo $produto['id_celulares']; ?>" class="buy-button">Adicionar ao Carrinho</a>
+
             </div>
         </div>
     </main>
@@ -96,5 +102,3 @@ if (isset($_GET['id'])) {
     </footer>
 </body>
 </html>
-
-            
