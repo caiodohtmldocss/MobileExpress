@@ -58,7 +58,8 @@ if (isset($_GET['id'])) {
                 <h1 class="product-name"><?php echo $produto['nome_celulares']; ?></h1>
                 <p class="product-description"><?php echo $produto['descricao_celures']; ?></p>
                 <p class="product-price">Preço: R$ <?php echo number_format($produto['preco_celulares'], 2, ',', '.'); ?></p>
-                <a href="comprar.php?id=<?php echo $produto['id_celulares']; ?>" class="buy-button">Adicionar ao Carrinho</a>
+                <br><br>
+                <a href="comprar.php?id=<?php echo $produto['id_celulares']; ?>" class="botao-add">Adicionar ao carrinho</a>
             </div>
         </div>
     </main>

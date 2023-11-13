@@ -450,15 +450,19 @@
   margin-bottom: 10px;
 }
 
-.buy-button {
-  background-color: #333;
-  color: #fff;
-  padding: 15px 30px; /* Ajuste conforme necessário para largura e altura desejadas */
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 10px; /* Adicione margem superior para separar do texto acima */
-        }
+.botao-add{
+    background-color: #00FF00; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 10px 10px; /* Espaçamento interno */
+    border: none; /* Remover a borda padrão */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Alterar o cursor ao passar o mouse */
+    font-size: 14px; /* Tamanho da fonte */
+    text-align: center; /* Alinhamento de texto */
+    text-decoration: none; /* Remover sublinhado de links */
+    width: 330px;
+    margin-top: 8px;
+}
 
 
 footer {
