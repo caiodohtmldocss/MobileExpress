@@ -71,7 +71,7 @@ nav {
 
 .price {
   font-weight: bold;
-  color: var(--redMedium);
+  color: var(--blue);
 }
 
 input[type="submit"] {
@@ -84,7 +84,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: var(--redMedium);
+  background-color: var(--blue);
 }
 
 
