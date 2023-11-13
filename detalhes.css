@@ -394,20 +394,6 @@
     justify-content: space-between;
 }
 
-/* Estilo adicional para espaçamento e alinhamento */
-.main-image {
-    max-width: 40%; /* Ajuste conforme necessário */
-}
-
-.formcomprar {
-    max-width: 40%; /* Ajuste conforme necessário */
-}
-
-.product-details {
-  display: flex;
-  justify-content: space-between;
-}
-
 .main-image {
   max-width: 40%; /* Ajuste o tamanho conforme necessário */
 }
@@ -467,11 +453,13 @@
 .buy-button {
   background-color: #333;
   color: #fff;
-  padding: 10px;
+  padding: 15px 30px; /* Ajuste conforme necessário para largura e altura desejadas */
   text-decoration: none;
   border-radius: 5px;
   display: inline-block;
-}
+  margin-top: 10px; /* Adicione margem superior para separar do texto acima */
+        }
+
 
 footer {
   background-color: #333;
@@ -492,4 +480,9 @@ footer {
 
 .description-container {
   max-width: 30%; /* Ajuste o valor para reduzir a largura */
+}
+
+img#imagem-grande {
+  max-width: 90%; /* Ajuste conforme necessário */
+  margin-right: 20px; /* Adicione uma margem à direita para separar a imagem */
 }
