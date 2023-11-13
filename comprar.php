@@ -96,9 +96,7 @@ if (isset($_GET['id'])) {
         </form>
     </main>
 
-    <footer>
-        <!-- Inclua o rodapé comum a todas as páginas, se houver -->
-    </footer>
+    
 </body>
 
 </html>
