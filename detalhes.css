@@ -5,31 +5,31 @@
     --gray: #cecece;
     --redMedium: #9a1915;
     --redDark: #681413;
-}
-
-* {
+  }
+  
+  * {
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
     scroll-behavior: smooth !important;
-}
-body {
+  }
+  body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-header {
+  }
+  
+  header {
     background-color: #acc9fc;
-}
-
-nav {
+  }
+  
+  nav {
     display: flex;
     align-items: center;
     height: 120px;
     padding: 0 40px;
     justify-content: space-between;
-}
-.button-bg {
+  }
+  .button-bg {
   background-color: #acc9fcc3; 
   color: #fff; 
   padding: 10px 20px; 
@@ -41,22 +41,22 @@ nav {
   font-size: 16px;
   cursor: pointer;
   position: relative;
-  left: 5px;
+  left: 1330px;
   margin-top: 10px;
-}
-
-.button-bg:hover {
+  }
+  
+  .button-bg:hover {
   background-color: #0d20736a; 
-}
-
-#logo {
- width: 180px;  
-}
-#searchInput{
+  }
+  
+  #logo {
+  width: 180px;  
+  }
+  #searchInput{
      width: 600px;
-}
-
-footer {
+  }
+  
+  footer {
     background-color: var(--blue);
     bottom: 0;
     padding-bottom: 10px;
@@ -64,74 +64,74 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
-}
-.footer-icons {
+  }
+  .footer-icons {
     display: flex;
     padding: 10px;
     align-items: center;
     justify-content: center;
     text-align: center;
-}
-
-.items-social-media {
+  }
+  
+  .items-social-media {
     color: var(--white);
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 15px;
-}
-
-.footer-link {
+  }
+  
+  .footer-link {
     color: var(--white);
     align-items: center;
     justify-content: center;
     text-align: center;
-}
-
-#product-list {
+  }
+  
+  #product-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 2rem;
-}
-
-.product {
+  }
+  
+  .product {
     border: 1px solid #ddd;
     padding: 2rem;
     margin: 1rem;
     width: 300px;
     text-align: center;
     background-color: #C0C0C0;
-}
-
-.product img {
+  }
+  
+  .product img {
     max-width: 100px;
-}
-
-
-
-.product p {
+  }
+  
+  
+  
+  .product p {
     font-size: 1rem;
     color: black;
-}
-.product h2 {
+  }
+  .product h2 {
     font-size: 1rem;
     color: black;
     font-weight: bold;
-}
-
-
-.name{
+  }
+  
+  
+  .name{
   font-weight: bold;
-}
-
-#banner {
+  }
+  
+  #banner {
     width: 95%;
     text-align: center;
     padding: 20px;
     padding-left: 50px;
-}
-.styled-link {
+  }
+  .styled-link {
     display: inline-block;
     padding: 10px 20px;
     color: black;
@@ -186,8 +186,22 @@ footer {
     padding: 10px 0;
     transition: 0.3s;
   }
-
-
+  .button-bg {
+    background-color: #acc9fcc3;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius:10px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    left: 1450px;
+    margin-top: 10px;
+  }
+  
   .botaocrud {
     background-color: #acc9fcc3;
     color: #fff;
@@ -206,9 +220,9 @@ footer {
     align-items: center;
     justify-content: center;
     height: 100vh;
-}
-
-.search-box {
+  }
+  
+  .search-box {
     position: relative;
     width: 50px;
     height: 50px;
@@ -216,13 +230,13 @@ footer {
     border-radius: 25px; /* Half of the height for cylindrical effect */
     overflow: hidden;
     transition: width 0.3s ease-in-out;
-}
-
-.search-box:hover {
+  }
+  
+  .search-box:hover {
     width: 250px;
-}
-
-.search-input {
+  }
+  
+  .search-input {
     width: 100%;
     height: 100%;
     border: none;
@@ -230,9 +244,9 @@ footer {
     font-size: 16px;
     padding: 10px;
     border-radius: 25px; /* Half of the height for cylindrical effect */
-}
-
-.search-button {
+  }
+  
+  .search-button {
     position: absolute;
     top: 0;
     right: 0;
@@ -245,12 +259,12 @@ footer {
     transition: background-color 0.3s ease-in-out;
     border-top-right-radius: 25px; /* Half of the height for cylindrical effect */
     border-bottom-right-radius: 25px; /* Half of the height for cylindrical effect */
-}
-
-.search-button:hover {
+  }
+  
+  .search-button:hover {
     background-color: #0056b3;
-}
-.link-detalhes {
+  }
+  .link-detalhes {
   display: inline-block;
   background-color:#ffa319b8;
   color: black;
@@ -259,12 +273,12 @@ footer {
   border-radius: 4px;
   margin-top: 10px;
   font-weight: bold;
-}
-
-.link-detalhes:hover {
+  }
+  
+  .link-detalhes:hover {
   background-color: #f0b15486;
-}
-.confirm-popup {
+  }
+  .confirm-popup {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -278,14 +292,14 @@ footer {
   transform: translate(-50%, -50%);
   z-index: 1000;
   text-align: center;
-}
-
-.confirm-popup h3 {
+  }
+  
+  .confirm-popup h3 {
   font-size: 18px;
   margin: 0 0 20px;
-}
-
-.confirm-popup button {
+  }
+  
+  .confirm-popup button {
   background-color: #007bff;
   border: none;
   border-radius: 5px;
@@ -296,18 +310,18 @@ footer {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-}
-
-.confirm-popup button.cancel {
+  }
+  
+  .confirm-popup button.cancel {
   background-color: #ccc;
-}
-
-.confirm-popup button:hover {
+  }
+  
+  .confirm-popup button:hover {
   background-color: #0056b3;
-}
-
-/* Estilo para fundo escuro de sobreposição */
-.overlay {
+  }
+  
+  /* Estilo para fundo escuro de sobreposição */
+  .overlay {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -315,20 +329,24 @@ footer {
   width: 100%;
   height: 100%;
   z-index: 999;
-}
+  }
   
   .menu a:hover {
     background-color: #acc9fc;
   }
   @media (max-width: 978px) {
-
+  
     #banner {
       width: 100vw;
       padding: 0 !important;
     }
     .search-container {
-      display: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
   }
+  
   .search-box {
       position: relative;
       width: 200px; /* Largura fixa de 200 pixels */
@@ -367,21 +385,6 @@ footer {
       background-color: #0056b3;
       transition: none;
   }
-  .button-bg {
-    background-color: #acc9fcc3;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius:10px;
-    text-align: center;
-    display: inline-block;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    position: relative;
-    margin-top: 1px;
-  }
-  
   
   }
-   
+  
