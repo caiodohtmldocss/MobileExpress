@@ -23,6 +23,22 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="compras.css">
     <title>Detalhes do Produto</title>
+    <style>
+        /* Adicione este estilo para usar flexbox */
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Estilo adicional para espaçamento e alinhamento */
+        .main-image {
+            max-width: 50%; /* Ajuste conforme necessário */
+        }
+
+        .formcomprar {
+            max-width: 40%; /* Ajuste conforme necessário */
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -47,19 +63,8 @@ if (isset($_GET['id'])) {
         </nav>
     </header>
     <main>
-        <div class="product-details">
-            <!-- Miniaturas das imagens à esquerda -->
-            <div class="thumbnail-images">
-                <?php
-                if (isset($_GET['id'])) {
-                    // Exibir as miniaturas das imagens com as funções JavaScript associadas
-                    echo '<img src="' . $produto['imagem_celulares2'] . '" alt="Miniatura 2" onclick="trocarImagem(\'' . $produto['imagem_celulares2'] . '\')">';
-                    echo '<img src="' . $produto['imagem_celulares3'] . '" alt="Miniatura 3" onclick="trocarImagem(\'' . $produto['imagem_celulares3'] . '\')">';
-                    echo '<img src="' . $produto['imagem_celulares4'] . '" alt="Miniatura 4" onclick="trocarImagem(\'' . $produto['imagem_celulares4'] . '\')">';
-                    echo '<img src="' . $produto['imagem_celulares5'] . '" alt="Miniatura 5" onclick="trocarImagem(\'' . $produto['imagem_celulares5'] . '\')">';
-                }
-                ?>
-            </div>
+    <div class="product-details">
+            <!-- Exibir apenas uma imagem principal -->
             <div class="main-image">
                 <img id="imagem-grande" src="<?php echo $produto['imagem_celulares']; ?>" alt="<?php echo $produto['nome_celulares']; ?>">
             </div>
@@ -68,14 +73,11 @@ if (isset($_GET['id'])) {
                 <p class="product-description"><?php echo $produto['descricao_celures']; ?></p>
                 <p class="product-price">Preço: R$ <?php echo number_format($produto['preco_celulares'], 2, ',', '.'); ?></p>
                 <a href="comprar.php?id=<?php echo $produto['id_celulares']; ?>" class="buy-button">Adicionar ao Carrinho</a>
-
             </div>
         </div>
     </main>
     <script src="script.js"></script>
-
-
-
+    
     <footer>
         <div class="footer-icons">
             <a class="items-social-media" href="https://www.facebook.com/senaitaubate">
