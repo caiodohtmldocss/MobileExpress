@@ -37,10 +37,8 @@ nav {
   text-decoration: none; /* Remover sublinhado padrão em links */
   border: none; /* Remover borda do botão */
   border-radius: 5px; /* Cantos arredondados */
-
-  align-items: center;
+  margin-top: -2px;
   margin-left: 100px;
-  margin-top: 20px;
 }
 
 #botao:hover {
@@ -214,6 +212,19 @@ input{
     text-align: center;
     position: absolute;
   }
+  #botao {
+    display: inline-block;
+    padding: 5px 5px;
+    background-color: #0d1f73; 
+    color: #fff; /* Cor do texto do botão */
+    text-decoration: none; /* Remover sublinhado padrão em links */
+    border: none; /* Remover borda do botão */
+    border-radius: 5px; /* Cantos arredondados */
+    margin-top: -2px;
+    margin-left: 70px;
+  }
+  
+
 }
 
 @media (max-width: 1024px) {
