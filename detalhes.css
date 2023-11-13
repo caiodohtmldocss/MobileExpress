@@ -64,6 +64,7 @@
     bottom: 0;
     width: 100%;
     text-align: center;
+    position: fixed;
   }
   .footer-icons {
     display: flex;
@@ -387,4 +388,108 @@
   }
   
   }
-  
+
+  .product-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo adicional para espaçamento e alinhamento */
+.main-image {
+    max-width: 40%; /* Ajuste conforme necessário */
+}
+
+.formcomprar {
+    max-width: 40%; /* Ajuste conforme necessário */
+}
+
+.product-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-image {
+  max-width: 40%; /* Ajuste o tamanho conforme necessário */
+}
+
+.formcomprar {
+  max-width: 50%; /* Ajuste o tamanho conforme necessário */
+}
+
+/* Adicionando margem à direita para afastar a imagem mais para a direita */
+.main-image img {
+  width: 100%;
+  margin-right: 20px; /* Ajuste a margem conforme necessário */
+}
+
+/* Estilo adicional para o restante do conteúdo */
+.formcomprar {
+  text-align: left;
+}
+
+.product-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px; 
+}
+
+.main-image {
+  max-width: 20%; /* Ajuste conforme necessário */
+}
+
+.main-image img {
+  width: 100%;
+}
+
+.formcomprar {
+  max-width: 50%; /* Ajuste conforme necessário */
+  padding: 20px;
+}
+
+/* Estilos adicionais conforme necessário */
+.product-name {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.product-description {
+  margin-bottom: 20px;
+  text-align: justify;
+  width: 200%;
+}
+
+.product-price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.buy-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: none;
+}
+
+.info-background {
+  background-color: #f1f1f1; /* Adicione a cor de fundo desejada */
+  padding: 18px; /* Adicione preenchimento conforme necessário */
+  border-radius: 10px; /* Adicione borda arredondada conforme necessário */
+}
+
+.description-container {
+  max-width: 30%; /* Ajuste o valor para reduzir a largura */
+}
