@@ -1,0 +1,99 @@
+:root {
+  --blue: #acc9fc;
+  --black: #000000;
+  --white: #ffffff;
+  --gray: #cecece;
+  --redMedium: #9a1915;
+  --redDark: #681413;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+header {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 120px;
+  padding: 0 40px;
+  justify-content: space-between;
+}
+
+#logo {
+  width: 180px;
+}
+
+#checkout-form {
+  display: flex;
+  margin: 20px;
+}
+
+/* Estilos para a imagem principal */
+.main-image {
+  float: left;
+  width: 30%;
+  margin-right: 20px;
+}
+
+.main-image img {
+  max-width: 100%;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+}
+
+/* Estilos para o formulário de compra */
+#checkout-form form {
+  float: left;
+  width: 60%;
+}
+
+#checkout-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--blue);
+}
+
+#checkout-form input {
+  width: calc(100% - 16px);
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--blue);
+}
+
+input[type="submit"] {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--blue);
+}
+
+
+
+.items-social-media {
+  color: var(--white);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+}
+

@@ -45,80 +45,20 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="compras.css"> <!-- Adicione o arquivo CSS para a página de compra -->
-    <script src="comprar.js"></script> <!-- Adicione o arquivo JS para a página de compra -->
+    <link rel="stylesheet" href="comprar.css">
+    <script src="comprar.js"></script>
     <title>Mobile Express - Comprar</title>
-    <style>
-        /* Estilos para a imagem principal */
-.main-image img {
-    max-width: 100%; /* Reduz o tamanho máximo da imagem para o tamanho do contêiner */
-    border: 1px solid #ccc; /* Adiciona uma borda de 1px com cor cinza claro */
-}
-
-/* Estilos para o formulário de compra */
-form {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-}
-/* Estilos para a imagem principal */
-/* Estilos para a imagem principal */
-.main-image img {
-    max-width: 10px; /* Reduz o tamanho máximo da imagem para 80% do tamanho do contêiner */
-    border: 1px solid #ccc; /* Adiciona uma borda de 1px com cor cinza claro */
-    display: block; /* Centraliza a imagem na página */
-    margin: 0 auto; /* Centraliza a imagem na página */
-}
-
-/* Estilos para o formulário de compra */
-#checkout-form {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-#checkout-form label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-#checkout-form input {
-    width: calc(100% - 16px); /* Reduz o tamanho dos campos para lidar com a largura do preenchimento */
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box; /* Inclui o preenchimento e a borda no cálculo do tamanho total */
-}
-
-
-</style>
 </head>
 
 <body>
     <header>
-    <nav>
-        <form class="pesq" action="pagina.php">
-        <div class="search-container">
-        <div class="search-box">
-            <input class="search-input" name="busca" value="<?php if(isset($_GET['busca'])) echo ($_GET['busca']) ?>" placeholder="Procure um celular" type="text">
-            <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
-        </div>
-    </div>
-    </form>
-    <div class="logo">
-            <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa">
+        <nav>
+            <div class="logo">
+                <a href="index.php"><img id="logo" src="img/logome.png" alt="Logo da Empresa"></a>
             </div>
 
             <div class="menu" id="menu">
-            <a href="index.php">Home</a>
+                <a href="index.php">Home</a>
                 <a href="indexiphone.php">Iphone</a>
                 <a href="indexxaiomi.php">Xiaomi</a>
                 <a href="indexmotorola.php">Motorola</a>
@@ -135,13 +75,8 @@ input {
     </header>
 
     <main id="checkout-form">
-        <?php if (isset($erro)) : ?>
-            <p class="erro"><?php echo $erro; ?></p>
-        <?php endif; ?>
-
-        <div class="product-details">
+        <div class="main-image">
             <img src="<?php echo $produto['imagem_celulares']; ?>" alt="<?php echo $produto['nome_celulares']; ?>">
-            <p class="name"><?php echo $produto['nome_celulares']; ?></p>
         </div>
 
         <!-- Formulário de compra -->
@@ -156,16 +91,12 @@ input {
             <input type="text" id="data_validade" name="data_validade" placeholder="MM/AA" required>
 
             <!-- Adicione mais campos conforme necessário -->
-            <p>Preço:</p>
-            <p class="price">R$ <?php echo $produto['preco_celulares']; ?></p>
+            <p class="price">Preço: R$ <?php echo $produto['preco_celulares']; ?></p>
             <input type="submit" value="Finalizar Compra">
         </form>
     </main>
-    </main>
 
-    <footer>
-        <!-- Inclua o rodapé comum a todas as páginas, se houver -->
-    </footer>
+    
 </body>
 
 </html>

@@ -23,22 +23,6 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="detalhes.css">
     <title>Detalhes do Produto</title>
-    <style>
-        /* Adicione este estilo para usar flexbox */
-        .product-details {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Estilo adicional para espaçamento e alinhamento */
-        .main-image {
-            max-width: 50%; /* Ajuste conforme necessário */
-        }
-
-        .formcomprar {
-            max-width: 40%; /* Ajuste conforme necessário */
-        }
-    </style>
 </head>
 <body>
 <header>
@@ -68,11 +52,18 @@ if (isset($_GET['id'])) {
             <div class="main-image">
                 <img id="imagem-grande" src="<?php echo $produto['imagem_celulares']; ?>" alt="<?php echo $produto['nome_celulares']; ?>">
             </div>
+            <div class="description-container">
+                <div class="info-background">
             <div class="formcomprar">
                 <h1 class="product-name"><?php echo $produto['nome_celulares']; ?></h1>
                 <p class="product-description"><?php echo $produto['descricao_celures']; ?></p>
                 <p class="product-price">Preço: R$ <?php echo number_format($produto['preco_celulares'], 2, ',', '.'); ?></p>
+<<<<<<< HEAD
                 <a href="carrinho.php?id=<?php echo $produto['id_celulares']; ?>" class="buy-button">Adicionar ao Carrinho</a>
+=======
+                <br><br>
+                <a href="comprar.php?id=<?php echo $produto['id_celulares']; ?>" class="botao-add">Adicionar ao carrinho</a>
+>>>>>>> cfd62ba93fdffd7d94f98692ae92c496216fa886
             </div>
         </div>
     </main>
