@@ -66,12 +66,13 @@
                 if ($resultado) {
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
-                            echo "<img src='" . $row["imagem_celulares"] . "'>";
-                            echo "<p class='name'>" . $row["nome_celulares"] . "</p>";
-                            echo "<p class='price'>R$" . $row["preco_celulares"] . "</p>";
-                            echo '<a class="botaocrud" href="editar_celular.php?id=' . $row["id_celulares"] . '">Editar</a>';
-                            echo '<a class="botaocrud" onclick="confirmDelete(' . $row["id_celulares"] . ')">Excluir</a>';
-                            echo "</div>";
+                            echo '<div class="product">';
+            echo "<img src='" . $row["imagem_celulares"] . "'>";
+            echo "<p class='name'>" . $row["nome_celulares"] . "</p>";
+            echo "<p class='price'>R$" . $row["preco_celulares"] . "</p>";
+            echo '<a class="botaocrud" href="editar_celular.php?id=' . $row["id_celulares"] . '">Editar</a>';
+            echo '<a class="botaocrud" onclick="confirmDelete(' . $row["id_celulares"] . ')">Excluir</a>';
+            echo "</div>";
 
 
                             

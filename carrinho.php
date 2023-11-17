@@ -1,44 +1,47 @@
 <?php
-include("conexao.php"); // Inclua o arquivo de conexão
-
 session_start();
 
-if (!isset($_SESSION['carrinho'])) {
-    $_SESSION['carrinho'] = [];
-}
-
-if (isset($_POST['adicionar'])) {
+if (isset($_POST['id_celular'])) {
     $id_celular = $_POST['id_celular'];
-    $quantidade = $_POST['quantidade'];
 
-    // Execute uma consulta SQL para obter informações do celular com base no ID
+    include('conexao.php');
     $sql = "SELECT * FROM celulares WHERE id_celulares = $id_celular";
-    $result = $conn->query($sql);
+    $result = $mysqli->query($sql);
 
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $produto = $row['nome_celulares']; // Nome do celular
-        $descricao = $row['descricao_celulares']; // Descrição do celular
-        $preco = $row['preco_celulares']; // Preço do celular
-        $imagem = $row['imagem_celulares']; // Nome da imagem do celular
+        $produto = $result->fetch_assoc();
 
-        $item = [
-            'id_celular' => $id_celular,
-            'produto' => $produto,
-            'descricao' => $descricao,
-            'preco' => $preco,
-            'imagem' => $imagem,
-            'quantidade' => $quantidade,
-        ];
+        // Adiciona a quantidade inicial ou mantém 1 se não estiver definida
+        $produto['quantidade'] = isset($produto['quantidade']) ? $produto['quantidade'] : 1;
 
-        array_push($_SESSION['carrinho'], $item);
+        // Adiciona ou atualiza o produto no carrinho
+        if (!isset($_SESSION['carrinho'][$id_celular])) {
+            // Se o produto não estiver no carrinho, adiciona-o
+            $_SESSION['carrinho'][$id_celular] = $produto;
+        }
+    } else {
+        die("Produto não encontrado.");
     }
+} elseif (isset($_POST['acao']) && $_POST['acao'] == 'adicionar') {
+    $id_celular = $_POST['id_celular'];
+    $_SESSION['carrinho'][$id_celular]['quantidade']++;
+} elseif (isset($_POST['acao']) && $_POST['acao'] == 'diminuir') {
+    $id_celular = $_POST['id_celular'];
+    if ($_SESSION['carrinho'][$id_celular]['quantidade'] > 1) {
+        $_SESSION['carrinho'][$id_celular]['quantidade']--;
+    }
+} elseif (isset($_POST['remover'])) {
+    $id_celular = $_POST['id_celular'];
+    unset($_SESSION['carrinho'][$id_celular]);
 }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carrinho.css">
     <title>Carrinho de Compras</title>
     <style>
         body {
@@ -67,80 +70,83 @@ if (isset($_POST['adicionar'])) {
         .carrinho-form {
             margin: 20px 0;
         }
+        .total {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
+
+<header>
+    <!-- Adicione o cabeçalho aqui, se necessário -->
+</header>
+
+<main>
     <div class="container">
-        <h1>Produtos Disponíveis</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Preço</th>
-                    <th>Adicionar ao Carrinho</th>
-                    <th>Imagem</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                // Execute uma consulta SQL para obter todos os celulares disponíveis
-                $sql = "SELECT * FROM celulares";
-                $result = $mysqli->query($sql);
+        <h1>Carrinho de Compras</h1>
 
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $id_celular = $row['id_celulares'];
-                        $produto = $row['nome_celulares'];
-                        $preco = $row['preco_celulares'];
-                        $imagem = $row['imagem_celulares'];
-
-                        echo "<tr>";
-                        echo "<td>$produto</td>";
-                        echo "<td>R$ $preco</td>";
-                        echo "<td>
-                                <form action='index.php' method='post' class='carrinho-form'>
-                                    <input type='hidden' name='id_celular' value='$id_celular'>
-                                    <input type='number' name='quantidade' value='1' min='1'>
-                                    <button type='submit' name='adicionar'>Adicionar</button>
-                                </form>
-                              </td>";
-                        echo "<td><img src='$imagem' alt='$produto' width='100'></td>";
-                        echo "</tr>";
-                    }
-                }
-                ?>
-            </tbody>
-        </table>
-        <h2>Seu Carrinho de Compras</h2>
         <table>
             <thead>
                 <tr>
                     <th>Produto</th>
                     <th>Preço</th>
                     <th>Quantidade</th>
-                    <th>Total</th>
+                    <th>Subtotal</th>
+                    <th>Remover</th>
                 </tr>
             </thead>
             <tbody>
-                <?php
-                $total = 0;
-                foreach ($_SESSION['carrinho'] as $item) {
-                    $subtotal = $item['preco'] * $item['quantidade'];
-                    $total += $subtotal;
-                    echo "<tr>";
-                    echo "<td>{$item['produto']}</td>";
-                    echo "<td>R$ {$item['preco']}</td>";
-                    echo "<td>{$item['quantidade']}</td>";
-                    echo "<td>R$ $subtotal</td>";
-                    echo "</tr>";
-                }
-                ?>
-                <tr>
-                    <td colspan="3">Total</td>
-                    <td>R$ <?php echo $total; ?></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+            <?php
+// Exibe os produtos no carrinho
+if (!empty($_SESSION['carrinho']) && is_array($_SESSION['carrinho'])) {
+    foreach ($_SESSION['carrinho'] as $id_celular => $produto) {
+        $quantidade = isset($produto['quantidade']) ? $produto['quantidade'] : 1; // Inicializa quantidade se não estiver definida
+
+        echo "<tr>";
+        echo "<td>{$produto['nome_celulares']}</td>";
+        echo "<td>R$ {$produto['preco_celulares']}</td>";
+        echo "<td>
+                <form action='carrinho.php' method='post' class='carrinho-form'>
+                    <input type='hidden' name='id_celular' value='$id_celular'>
+                    <input type='hidden' name='acao' value='adicionar'>
+                    <button type='submit' name='alterar_quantidade'>Adicionar</button>
+                </form>
+              </td>";
+        echo "<td>{$quantidade}</td>";
+        echo "<td>R$ " . number_format($produto['preco_celulares'] * $quantidade, 2, ',', '.') . "</td>";
+        echo "<td>
+                <form action='carrinho.php' method='post' class='carrinho-form'>
+                    <input type='hidden' name='id_celular' value='$id_celular'>
+                    <input type='hidden' name='acao' value='diminuir'>
+                    <button type='submit' name='alterar_quantidade'>Diminuir</button>
+                </form>
+              </td>";
+        echo "<td>
+                <form action='carrinho.php' method='post' class='carrinho-form'>
+                    <input type='hidden' name='id_celular' value='$id_celular'>
+                    <button type='submit' name='remover'>Remover</button>
+                </form>
+              </td>";
+        echo "</tr>";
+    }
+} else {
+    echo '<tr><td colspan="6">O carrinho está vazio.</td></tr>';
+}
+?>
+
+        // Calcula o valor total
+        $total = 0;
+        foreach ($_SESSION['carrinho'] as $produto) {
+            $total += $produto['preco_celulares'] * $produto['quantidade'];
+        }
+        ?>
+
+        <div class="total">
+            <h2>Total do Carrinho</h2>
+            <strong>R$ <?php echo number_format($total, 2, ',', '.'); ?></strong>
+        </div>
+
+        <a href="finalizar_compra.php" class="finalizar-compra-button">Finalizar Compra</a>
+    </div
