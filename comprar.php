@@ -46,7 +46,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="comprar.css">
-    <script src="comprar.js"></script>
+    <script src="script.js"></script>
     <title>Mobile Express - Comprar</title>
 </head>
 
@@ -78,8 +78,7 @@ if (isset($_GET['id'])) {
         <div class="main-image">
             <img src="<?php echo $produto['imagem_celulares']; ?>" alt="<?php echo $produto['nome_celulares']; ?>">
         </div>
-
-        <!-- Formulário de compra -->
+        <div class="form-container">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
@@ -94,6 +93,7 @@ if (isset($_GET['id'])) {
             <p class="price">Preço: R$ <?php echo $produto['preco_celulares']; ?></p>
             <input type="submit" value="Finalizar Compra">
         </form>
+</div>
     </main>
 
     

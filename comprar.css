@@ -43,7 +43,15 @@ nav {
   width: 30%;
   margin-right: 20px;
 }
-
+.form-container {
+  margin: 20px auto; /* Centralizar o contêiner */
+  padding: 20px; /* Adicionar espaço interno */
+  border: 2px solid var(--blue); /* Manter a largura da borda */
+  border-radius: 8px; /* Manter o raio da borda */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Manter a sombra */
+  width: 600px; /* Definir uma largura máxima para o contêiner */
+  height: 320px;
+}
 .main-image img {
   max-width: 100%;
   border: 1px solid var(--gray);
@@ -53,7 +61,7 @@ nav {
 /* Estilos para o formulário de compra */
 #checkout-form form {
   float: left;
-  width: 60%;
+  width: 100%;
 }
 
 #checkout-form label {
@@ -96,4 +104,101 @@ input[type="submit"]:hover {
   text-align: center;
   padding: 15px;
 }
+.navbar {
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 100;
+}
+
+.hamburguer {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 2px 0;
+}
+
+.button-bg {
+  background-color: #acc9fcc3;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius:10px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  left: 1320px;
+  margin-top: 10px;
+}
+
+.button-bg:hover {
+  background-color: #0d20736a;
+}
+
+.menu {
+  width: 0;
+  height: 100%;
+  background-color: #0d207385;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  padding: 20px;
+  transition: left 0.5s, width 0.5s;
+  /* Adiciona uma transição para a largura */
+  overflow-y: auto;
+  z-index: 99;
+}
+
+.menu.active {
+  left: 0;
+  width: 250px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background-color: #acc9fc;
+}
+@media screen and (max-width: 768px) {
+  /* Ajuste do layout para telas menores */
+
+  /* Aumenta a largura da imagem principal */
+  .main-image {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+    margin-top: 100px;
+  }
+  .form-container {
+    margin: 20px auto; /* Centralizar o contêiner */
+    padding: 20px; /* Adicionar espaço interno */
+    border: 2px solid var(--blue); /* Manter a largura da borda */
+    border-radius: 8px; /* Manter o raio da borda */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Manter a sombra */
+    width: 600px; /* Definir uma largura máxima para o contêiner */
+    height: 320px;
+    margin-right: 1px;
+  }
+}
+  
+  
+
+  
+
 
