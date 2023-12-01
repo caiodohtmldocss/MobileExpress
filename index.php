@@ -30,7 +30,7 @@
         </button>
             <div class="menu" id="menu">
                 <a href="index.php">Home</a>
-                <a href="indexiphone.php">Iphone</a>
+                <a href="indexiphone.php">Apple</a>
                 <a href="indexxaiomi.php">Xiaomi</a>
                 <a href="indexmotorola.php">Motorola</a>
                 <a href="indexsamsung.php">Samsung</a>
@@ -54,7 +54,7 @@
                         <img src="./img/iphoneofc.png" alt="Imagem 1">
                     </div>
                 </div>
-                <a class="description" href="indexiphone.php">Iphone</a>
+                <a class="description" href="indexiphone.php">Apple</a>
             </div>
             <div class="circle-desc">
                 <div class="circle">

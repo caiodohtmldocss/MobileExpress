@@ -45,7 +45,7 @@ if (isset($_SESSION['user'])) {
                         <img src="./img/iphoneofc.png" alt="Imagem 1">
                     </div>
                 </div>
-                <a class="description" href="iphoneadm.php">Iphone</a>
+                <a class="description" href="iphoneadm.php">Apple</a>
             </div>
             <div class="circle-desc">
                 <div class="circle">

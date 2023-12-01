@@ -18,7 +18,7 @@
             </div>
             <div class="menu" id="menu">
                 <a href="adm.php">Home</a>
-                <a href="iphoneadm.php">Iphone</a>
+                <a href="iphoneadm.php">Apple</a>
                 <a href="xiaomiadm.php">Xiaomi</a>
                 <a href="motorolaadm.php">Motorola</a>
                 <a href="samsungadm.php">Samsung</a>
